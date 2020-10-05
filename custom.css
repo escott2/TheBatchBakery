@@ -1,12 +1,29 @@
 header .display-4 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
+    margin: 0;
 }
 
 .donut-img {
+    width: 235px;
     min-width: 175px;
 }
 
+
+.navbar {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+
+}
+
+.fontAwesome {
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+.background-red {
+    background-color: red;
+}
 
 @media (max-width: 580px) {
     header .display-4 {

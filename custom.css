@@ -9,24 +9,43 @@ header .display-4 {
     min-width: 175px;
 }
 
+.title-wrapper {
+    width: 50%;
+}
 
-.navbar {
+
+nav,
+nav .btn {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
-
 }
 
 .fontAwesome {
     font-family: 'Helvetica', FontAwesome, sans-serif;
 }
 
-.background-red {
-    background-color: red;
+nav .btn {
+    font-size: 1.25rem;
 }
 
-@media (max-width: 580px) {
-    header .display-4 {
-        font-size: 45px;
+@media (max-width: 576px) {
+
+    .title-wrapper {
+        width: 100%;
     }
+
+    .donut-wrapper {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .donut-img {
+        display: none;
+    }
+
+
+
+
+
 }

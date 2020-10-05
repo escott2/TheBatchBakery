@@ -67,6 +67,8 @@
     </div>
   </div>
 
+
+
   <div class="container bg-light mt-4 py-4 js-order-screen">
     <div class="row">
 
@@ -77,13 +79,12 @@
             <h5 class="card-title">Vanilla Carmel Crunch</h5>
             <p class="card-text">Maple frosting, carmel drizzle, topped with crushed pecans.</p>
             <h6>Price: <span class="unitPrice">$1.50</span></h6>
-
             <form>
               <div class="form-group">
-                <label class="my-1 mr-2" for="quantity">
+                <label class="my-1 mr-2" for="vcc-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="quantity">
+                <select class="custom-select my-1 mr-sm-2" id="vcc-qty" name="quantity">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -96,8 +97,9 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
+                <button type="submit" class="btn btn-dark js-add-to-cart">Add to Cart</button>
+
               </div>
-              <button type="submit" class="btn btn-dark">Add to Cart</button>
             </form>
           </div>
         </div>
@@ -128,8 +130,9 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
+                <button type="submit" class="btn btn-dark js-add-to-cart">Add to Cart</button>
               </div>
-              <button type="submit" class="btn btn-dark">Add to Cart</button>
+
             </form>
           </div>
         </div>
@@ -160,8 +163,8 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
+                <button type="submit" class="btn btn-dark js-order-screen">Add to Cart</button>
               </div>
-              <button type="submit" class="btn btn-dark">Add to Cart</button>
             </form>
           </div>
         </div>
@@ -288,6 +291,7 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
@@ -297,6 +301,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
+  <script type="text/javascript" src="index.js"></script>
+
 </body>
 
 </html>

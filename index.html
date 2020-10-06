@@ -76,15 +76,15 @@
         <div class="card">
           <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title">Vanilla Carmel Crunch</h5>
-            <p class="card-text">Maple frosting, carmel drizzle, topped with crushed pecans.</p>
-            <h6>Price: <span class="unitPrice">$1.50</span></h6>
-            <form>
+            <h5 class="card-title js-product-name">Vanilla Caramel Crunch</h5>
+            <p class="card-text">Maple frosting, caramel drizzle, topped with crushed pecans.</p>
+            <h6>Price: <span class="js-unit-price">$1.50</span></h6>
+            <form name="product" class="product">
               <div class="form-group">
                 <label class="my-1 mr-2" for="vcc-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="vcc-qty" name="quantity">
+                <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vcc-qty" name="quantity">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -97,8 +97,7 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
-                <button type="submit" class="btn btn-dark js-add-to-cart">Add to Cart</button>
-
+                <button type="submit" class="btn btn-dark js-add-to-cart mt-2">Add to Cart</button>
               </div>
             </form>
           </div>
@@ -109,15 +108,15 @@
         <div class="card">
           <!-- <img class=" card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title">Chocolate Crunch</h5>
+            <h5 class="card-title js-product-name">Chocolate Crunch</h5>
             <p class="card-text">Vanilla frosting topped with crushed oreos.</p>
-            <h6>Price: <span class="unitPrice">$1.50</span></h6>
+            <h6>Price: <span class="js-unit-price">$1.50</span></h6>
             <form>
               <div class="form-group">
-                <label class="my-1 mr-2" for="quantity">
+                <label class="my-1 mr-2" for="cc-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="quantity">
+                <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="cc-qty">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -130,9 +129,8 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
-                <button type="submit" class="btn btn-dark js-add-to-cart">Add to Cart</button>
+                <button type="submit" class="btn btn-dark js-add-to-cart mt-2">Add to Cart</button>
               </div>
-
             </form>
           </div>
         </div>
@@ -142,15 +140,15 @@
         <div class="card">
           <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title">Maple Vanilla</h5>
+            <h5 class="card-title js-product-name">Maple Vanilla</h5>
             <p class="card-text">Maple frosting with a vanilla drizzle.</p>
-            <h6>Price: <span class="unitPrice">$1.50</span></h6>
+            <h6>Price: <span class="js-unit-price">$1.50</span></h6>
             <form>
               <div class="form-group">
-                <label class="my-1 mr-2" for="quantity">
+                <label class="my-1 mr-2" for="mv-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="quantity">
+                <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="mv-qty">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -163,7 +161,7 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
-                <button type="submit" class="btn btn-dark js-order-screen">Add to Cart</button>
+                <button type="submit" class="btn btn-dark js-order-screen mt-2">Add to Cart</button>
               </div>
             </form>
           </div>
@@ -176,16 +174,15 @@
         <div class="card">
           <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title">Vanilla Glazed</h5>
+            <h5 class="card-title js-product-name">Vanilla Glazed</h5>
             <p class="card-text">Maple frosting, carmel drizzle, topped with crushed pecans.</p>
-            <h6>Price: <span class="unitPrice">$1.50</span></h6>
-
+            <h6>Price: <span class="js-unit-price">$1.50</span></h6>
             <form>
               <div class="form-group">
-                <label class="my-1 mr-2" for="quantity">
+                <label class="my-1 mr-2" for="vg-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="quantity">
+                <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vg-qty">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -198,8 +195,8 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
+                <button type="submit" class="btn btn-dark js-order-screen mt-2">Add to Cart</button>
               </div>
-              <button type="submit" class="btn btn-dark">Add to Cart</button>
             </form>
           </div>
         </div>
@@ -209,15 +206,15 @@
         <div class="card">
           <!-- <img class=" card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title">Vanilla Sprinkle</h5>
+            <h5 class="card-title js-product-name">Vanilla Sprinkle</h5>
             <p class="card-text">Vanilla frosting topped with crushed oreos.</p>
-            <h6>Price: <span class="unitPrice">$1.50</span></h6>
+            <h6>Price: <span class="js-unit-price">$1.50</span></h6>
             <form>
               <div class="form-group">
-                <label class="my-1 mr-2" for="quantity">
+                <label class="my-1 mr-2" for="vs-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="quantity">
+                <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vs-qty">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -230,8 +227,8 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
+                <button type="submit" class="btn btn-dark js-order-screen mt-2">Add to Cart</button>
               </div>
-              <button type="submit" class="btn btn-dark">Add to Cart</button>
             </form>
           </div>
         </div>
@@ -241,15 +238,15 @@
         <div class="card">
           <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title">Milk Chocolate</h5>
+            <h5 class="card-title js-product-name">Milk Chocolate</h5>
             <p class="card-text">Maple frosting with a vanilla drizzle.</p>
-            <h6>Price: <span class="unitPrice">$1.50</span></h6>
+            <h6>Price: <span class="js-unit-price">$1.50</span></h6>
             <form>
               <div class="form-group">
-                <label class="my-1 mr-2" for="quantity">
+                <label class="my-1 mr-2" for="mc-qty">
                   <h6>Quantity</h6>
                 </label>
-                <select class="custom-select my-1 mr-sm-2" id="quantity">
+                <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="mc-qty">
                   <option selected>Choose...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -262,8 +259,8 @@
                   <option value="9">9</option>
                   <option value="10">10 - limit</option>
                 </select>
+                <button type="submit" class="btn btn-dark js-order-screen mt-2">Add to Cart</button>
               </div>
-              <button type="submit" class="btn btn-dark">Add to Cart</button>
             </form>
           </div>
         </div>

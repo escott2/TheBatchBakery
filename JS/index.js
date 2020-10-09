@@ -7,18 +7,25 @@ const addProduct = (event) => {
 
         const button = event.target;
         const product = event.target.parentNode.parentNode.parentNode;
-        const getProductName = product.querySelector(".js-product-name").textContent;
+        // const getProductName = product.querySelector(".js-product-name").textContent;
         const getQuantity = product.querySelector(".js-product-quantity").value;
-        const getPrice = product.querySelector(".js-unit-price").textContent;
+        // const getID = product.donutObjects.findIndex(x => x.name === 'Vanilla');
+        // const getPrice = product.querySelector(".js-unit-price").textContent;
 
         event.preventDefault();
+        // console.log("test");
 
-        let productData = {
-            name: getProductName,
-            quantity: getQuantity,
-            price: getPrice,
-        }
-        order.push(productData);
+        // let productData = {
+        //     // name: getProductName,
+        //     quantity: getQuantity,
+        //     // price: getPrice,
+        // }
+        // order.push(productData);
+
+
+        console.log(getQuantity);
+        // console.log(getID);
+
 
         button.disabled = true;
 

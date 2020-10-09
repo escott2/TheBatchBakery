@@ -1,11 +1,6 @@
 var obj = JSON.parse(product);
 const donutObjects = obj.donuts;
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-const loadMenu = document.querySelector(".js-load-menu");
-
+const loadMenuBtn = document.querySelector(".js-load-menu");
 const orderScreen = document.querySelector(".js-order-screen");
 let html = "";
 
@@ -15,10 +10,8 @@ let html = "";
 //CALLBACK FUNCTIONS
 
 const generateContent = () => {
-    // if (event.target.tagName == 'BUTTON') {
 
     for (let i = 0; i < donutObjects.length; i++) {
-        // console.log(donutObjects[i]["name"]);
         html += `
                 <div class="col-lg-4 col-md-6">
                 <div class="card js-get-id" id="${donutObjects[i]["id"]}">
@@ -56,14 +49,17 @@ const generateContent = () => {
 
     }
 
+    loadMenuBtn.classList.add("d-none");
+
     orderScreen.innerHTML = html;
+
 
 }
 
 
 //EVENT LISTENERS
 
-loadMenu.addEventListener("click", generateContent);
+loadMenuBtn.addEventListener("click", generateContent);
 
 
 // })

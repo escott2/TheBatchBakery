@@ -2,16 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loadMenu = document.querySelector(".js-load-menu");
     var obj = JSON.parse(product);
-    // const donutObjects = Object.values(obj);
     const donutObjects = obj.donuts;
-
-    let titleContent = document.querySelector(".test");
+    const orderScreen = document.querySelector(".js-order-screen");
     let html = "";
 
 
 
-
-
+    //CALLBACK FUNCTIONS
 
     const generateContent = () => {
         // if (event.target.tagName == 'BUTTON') {
@@ -20,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // console.log(donutObjects[i]["name"]);
             html += `
                 <div class="col-lg-4 col-md-6">
-                <div class="card">
+                <div class="card js-get-id" id="${donutObjects[i]["id"]}">
                 <div class="card-body">
                 `;
             html += `
-                    <h5 class="card-title">${donutObjects[i]["name"]}</h5>
+                    <h5 class="card-title js-product-name">${donutObjects[i]["name"]}</h5>
                     <p class="card-text">${donutObjects[i]["description"]}</p>
                     <h6>Price: $${donutObjects[i]["price"]}0</h6>
                     <form name="product" class="product">
@@ -55,46 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        titleContent.innerHTML = html;
+        orderScreen.innerHTML = html;
 
-
-        // for (let i = 0; i < donutObjects.length; i++) {
-        //     //enters first array
-        //     console.log("test");
-
-        //     for (let y = 0; y < donutObjects[i].length; y++) {
-        //         // enters objects within array
-
-
-        //         console.log(donutObjects[i][y].name);
-        // console.log(donutObjects);
-
-        // console.log(donutObjects[i].name);
-        // html += `
-        //     <h5 class="card-title">${product[i]["name"]}</h5>
-
-        //     </div>
-        //     </div>
-        //     </div>`;
-
-        // titleContent.innerHTML = html;
-
-        //     }
-        // }
-        // }
     }
 
 
-
-
-
-    console.log(donutObjects);
-
-
-    // console.log(obj);
-    // console.log(donutObjects);
-    // console.log(html)
-
+    //EVENT LISTENERS
 
     loadMenu.addEventListener("click", generateContent);
 

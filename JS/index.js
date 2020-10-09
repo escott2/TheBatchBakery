@@ -6,14 +6,12 @@ const addProduct = (event) => {
     if (event.target.tagName == 'BUTTON') {
 
         const button = event.target;
-        const product = event.target.parentNode.parentNode.parentNode;
-        // const getProductName = product.querySelector(".js-product-name").textContent;
+        const product = event.target.parentNode.parentNode.parentNode.parentNode;
+        const getID = product.id;
         const getQuantity = product.querySelector(".js-product-quantity").value;
-        // const getID = product.donutObjects.findIndex(x => x.name === 'Vanilla');
-        // const getPrice = product.querySelector(".js-unit-price").textContent;
 
         event.preventDefault();
-        // console.log("test");
+
 
         // let productData = {
         //     // name: getProductName,
@@ -24,7 +22,7 @@ const addProduct = (event) => {
 
 
         console.log(getQuantity);
-        // console.log(getID);
+        console.log(getID);
 
 
         button.disabled = true;
@@ -33,8 +31,6 @@ const addProduct = (event) => {
 }
 
 orderScreen.addEventListener("click", addProduct);
-
-console.log(order);
 
 
 

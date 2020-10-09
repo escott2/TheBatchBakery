@@ -1,26 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    const loadMenu = document.querySelector(".js-load-menu");
-    var obj = JSON.parse(product);
-    const donutObjects = obj.donuts;
-    const orderScreen = document.querySelector(".js-order-screen");
-    let html = "";
+var obj = JSON.parse(product);
+const donutObjects = obj.donuts;
 
 
+// document.addEventListener('DOMContentLoaded', () => {
 
-    //CALLBACK FUNCTIONS
+const loadMenu = document.querySelector(".js-load-menu");
 
-    const generateContent = () => {
-        // if (event.target.tagName == 'BUTTON') {
+const orderScreen = document.querySelector(".js-order-screen");
+let html = "";
 
-        for (let i = 0; i < donutObjects.length; i++) {
-            // console.log(donutObjects[i]["name"]);
-            html += `
+
+
+
+//CALLBACK FUNCTIONS
+
+const generateContent = () => {
+    // if (event.target.tagName == 'BUTTON') {
+
+    for (let i = 0; i < donutObjects.length; i++) {
+        // console.log(donutObjects[i]["name"]);
+        html += `
                 <div class="col-lg-4 col-md-6">
                 <div class="card js-get-id" id="${donutObjects[i]["id"]}">
                 <div class="card-body">
                 `;
-            html += `
+        html += `
                     <h5 class="card-title js-product-name">${donutObjects[i]["name"]}</h5>
                     <p class="card-text">${donutObjects[i]["description"]}</p>
                     <h6>Price: $${donutObjects[i]["price"]}0</h6>
@@ -50,16 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     `;
 
-        }
-
-        orderScreen.innerHTML = html;
-
     }
 
+    orderScreen.innerHTML = html;
 
-    //EVENT LISTENERS
-
-    loadMenu.addEventListener("click", generateContent);
+}
 
 
-})
+//EVENT LISTENERS
+
+loadMenu.addEventListener("click", generateContent);
+
+
+// })

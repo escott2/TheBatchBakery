@@ -1,5 +1,13 @@
-const orderScreen = document.querySelector(".js-order-screen");
-let order = [];
+// const orderScreen = document.querySelector(".js-order-screen");
+// let order = [];
+
+function findProductObject(array, productValue) {
+    for (let i = 0; i < donutObjects.length; i++) {
+        if (array[i]["id"] == productValue) {
+            return donutObjects[i];
+        }
+    }
+}
 
 const addProduct = (event) => {
 
@@ -7,24 +15,15 @@ const addProduct = (event) => {
 
         const button = event.target;
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
-        const getID = product.id;
-        const getQuantity = product.querySelector(".js-product-quantity").value;
+        const productID = product.id;
+        const productQuantity = Number(product.querySelector(".js-product-quantity").value);
+        const productData = findProductObject(donutObjects, productID);
+
+        productData.quantity = productQuantity;
+
+        console.log(donutObjects);
 
         event.preventDefault();
-
-
-        // let productData = {
-        //     // name: getProductName,
-        //     quantity: getQuantity,
-        //     // price: getPrice,
-        // }
-        // order.push(productData);
-
-
-        console.log(getQuantity);
-        console.log(getID);
-
-
         button.disabled = true;
 
     }

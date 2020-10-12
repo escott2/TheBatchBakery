@@ -7,8 +7,9 @@ let html = "";
 
 
 
-//CALLBACK FUNCTIONS
+//CALLBACK FUNCTIONS**************************************************************
 
+//EDIT NEEDED: Add parameters for all variables accessed outside this function...
 const generateContent = () => {
 
     for (let i = 0; i < donutObjects.length; i++) {
@@ -57,7 +58,7 @@ const generateContent = () => {
 }
 
 
-//EVENT LISTENERS
+//EVENT LISTENERS*********************************************************************************
 
 loadMenuBtn.addEventListener("click", generateContent);
 

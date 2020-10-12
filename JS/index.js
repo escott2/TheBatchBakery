@@ -58,6 +58,7 @@ const addProduct = (event) => {
         const productID = product.id;
         const productQuantity = Number(product.querySelector(".js-product-quantity").value);
         const productData = findProductObject(donutObjects, productID);
+        const productEditBtn = product.querySelector(".js-edit-btn");
 
         productData.quantity = productQuantity;
 
@@ -67,7 +68,9 @@ const addProduct = (event) => {
 
 
         event.preventDefault();
-        button.disabled = true;
+        //move to event listener
+        button.classList.add("d-none");
+        productEditBtn.classList.remove("d-none");
 
 
     }

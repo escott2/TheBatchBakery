@@ -28,6 +28,10 @@ nav .btn {
     font-size: 1.25rem;
 }
 
+.btn-danger {
+    background-color: #8E3E1B;
+    border: none;
+}
 
 
 

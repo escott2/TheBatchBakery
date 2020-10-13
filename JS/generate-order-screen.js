@@ -25,10 +25,13 @@ const generateContent = () => {
                     <form name="product" class="product">
                     <div class="form-group">
                       <label class="my-1 mr-2" for="vcc-qty">
-                        <h6>Quantity</h6>
+                        <h6 class="d-inline-block">Quantity</h6>
+                        <p class="d-inline-block font-weight-light">&ndash; Limit 10</p>
+
                       </label>
                       <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vcc-qty" name="quantity">
                         <option selected>Choose...</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -38,9 +41,11 @@ const generateContent = () => {
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10">10 - limit</option>
+                        <option value="10">10</option>
                       </select>
-                      <button type="submit" class="btn btn-dark js-add-to-cart mt-2">Add to Cart</button>
+                      <button type="button" class="btn btn-dark js-add-to-cart mt-2">Add to Cart</button>
+                      <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
+
                     </div>
                   </form>
                     </div>
@@ -60,7 +65,6 @@ const generateContent = () => {
 
 //EVENT LISTENERS*********************************************************************************
 
+// window.addEventListener('load', generateContent);
 loadMenuBtn.addEventListener("click", generateContent);
 
-
-// })

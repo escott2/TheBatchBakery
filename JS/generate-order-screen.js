@@ -43,8 +43,8 @@ const generateContent = () => {
                         <option value="9">9</option>
                         <option value="10">10</option>
                       </select>
-                      <button type="submit" class="btn btn-dark js-add-to-cart mt-2">Add to Cart</button>
-                      <button type="submit" class="btn btn-danger d-none js-add-to-cart js-edit-btn mt-2">Edit</button>
+                      <button type="button" class="btn btn-dark js-add-to-cart mt-2">Add to Cart</button>
+                      <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
 
                     </div>
                   </form>
@@ -65,7 +65,6 @@ const generateContent = () => {
 
 //EVENT LISTENERS*********************************************************************************
 
+// window.addEventListener('load', generateContent);
 loadMenuBtn.addEventListener("click", generateContent);
 
-
-// })

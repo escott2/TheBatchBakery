@@ -1,6 +1,32 @@
-// const orderScreen = document.querySelector(".js-order-screen");
-// let order = [];
 let orderTotalDiv = document.querySelector(".js-order-screen-total");
+
+//Begin findProductObject Variables
+// const button = event.target;
+// const product = event.target.parentNode.parentNode.parentNode.parentNode;
+// const productID = product.id;
+// const productQuantity = Number(product.querySelector(".js-product-quantity").value);
+// const productData = findProductObject(donutObjects, productID);
+// const productEditBtn = product.querySelector(".js-edit-btn");
+//End findProductObject Variables
+
+//REFACTORING
+
+//Access all add to cart buttons - these can be targeted with event in callback function. 
+const addToCartBtns = document.getElementsByClassName("js-add-to-cart");
+// const product;
+// const productID;
+// const productQty;
+// const productData;
+// const productEditBtn;
+
+
+
+
+
+
+
+
+
 
 
 /**
@@ -48,36 +74,72 @@ function orderTotal(array) {
 
 //CALLBACK FUNCTIONS**************************************************************
 
-//EDIT NEEDED: Add parameters for all variables accessed outside this function...
+//EDIT - Self contain
 const addProduct = (event) => {
 
-    if (event.target.tagName == 'BUTTON') {
+    const addToCartBtn = event.target;
 
-        const button = event.target;
+    if (addToCartBtn.classList.contains("js-add-to-cart")) {
+
+        const addToCartBtn = event.target;
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const productID = product.id;
+        const productQuantitySelector = product.querySelector(".js-product-quantity");
         const productQuantity = Number(product.querySelector(".js-product-quantity").value);
         const productData = findProductObject(donutObjects, productID);
-        const productEditBtn = product.querySelector(".js-edit-btn");
+        const editBtn = product.querySelector(".js-edit-btn");
 
         productData.quantity = productQuantity;
 
         console.log(donutObjects);
 
+        //Update Order Total
         orderTotalDiv.innerHTML = orderTotal(donutObjects);
+
+        //Toggle Buttons
+        addToCartBtn.classList.add("d-none");
+        editBtn.classList.remove("d-none");
+
+        productQuantitySelector.setAttribute("disabled", "")
 
 
         event.preventDefault();
-        //move to event listener
-        button.classList.add("d-none");
-        productEditBtn.classList.remove("d-none");
-
 
     }
 }
 
+const editCart = (event) => {
+
+    const editBtn = event.target;
+
+    if (editBtn.classList.contains("js-edit-btn")) {
+
+        const product = event.target.parentNode.parentNode.parentNode.parentNode;
+        const addToCartBtn = product.querySelector(".js-add-to-cart");
+        const productQuantitySelector = product.querySelector(".js-product-quantity");
+
+        console.log("test");
+        
+        //Toggle Buttons
+        addToCartBtn.classList.remove("d-none");
+        editBtn.classList.add("d-none");
+
+        productQuantitySelector.removeAttribute("disabled", "")
+
+        event.preventDefault();
+
+    }   
+}
 
 
 //EVENT LISTENERS*************************************************************
 
+
+
 orderScreen.addEventListener("click", addProduct);
+
+
+
+//edit button event listener>
+// -- when clicked, edit button add class display none, add-to-cart button remove display none class. 
+orderScreen.addEventListener("click", editCart);

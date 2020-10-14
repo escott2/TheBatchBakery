@@ -15,7 +15,7 @@ const generateContent = () => {
     for (let i = 0; i < donutObjects.length; i++) {
         html += `
                 <div class="col-lg-4 col-md-6">
-                <div class="card js-get-id product-${donutObjects[i]["id"]}">
+                <div class="card js-get-id js-product-${donutObjects[i]["id"]}">
                 <div class="card-body">
                 `;
         html += `
@@ -43,7 +43,7 @@ const generateContent = () => {
                         <option value="9">9</option>
                         <option value="10">10</option>
                       </select>
-                      <button type="button" class="btn btn-dark mt-2 js-add-to-cart" id="${donutObjects[i]["id"]}">Add to Cart</button>
+                      <button type="button" class="btn btn-dark mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add to Cart</button>
                       <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
 
                     </div>

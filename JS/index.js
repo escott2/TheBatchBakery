@@ -1,33 +1,20 @@
 let orderTotalDiv = document.querySelector(".js-order-screen-total");
 
-//Begin findProductObject Variables
-// const button = event.target;
-// const product = event.target.parentNode.parentNode.parentNode.parentNode;
-// const productID = product.id;
-// const productQuantity = Number(product.querySelector(".js-product-quantity").value);
-// const productData = findProductObject(donutObjects, productID);
-// const productEditBtn = product.querySelector(".js-edit-btn");
-//End findProductObject Variables
-
-//REFACTORING
-
-//Access all add to cart buttons - these can be targeted with event in callback function. 
-const addToCartBtns = document.getElementsByClassName("js-add-to-cart");
-// const product;
-// const productID;
-// const productQty;
-// const productData;
-// const productEditBtn;
 
 
 
 
 
+// FUNCTIONS **************************************************************
 
-
-
-
-
+/**
+ * Returns parent div with unique class name, matching button's ID. 
+ * @param {string} ...
+ */
+function findProductContainer(buttonId) {
+    const parentDiv = document.querySelector(`.product-${buttonId}`);
+    return parentDiv;
+}
 
 /**
  * Returns object in array, by ID.
@@ -43,6 +30,16 @@ function findProductObject(array, productValue) {
 }
 
 /**
+ * Sets quantity value in object.
+ * @param {} ...
+ * @param {string} ...
+ * 
+ */
+function setQty(qtyInputValue, productObject) {
+    productObject.quantity = qtyInputValue;
+}
+
+/**
  * Returns total cost of order.
  * @param {Array<Object>} array The array of objects including quantity and total properties.
  */
@@ -52,7 +49,6 @@ function orderTotal(array) {
     let deliveryCharge = 5.00
     let salesTax;
     let orderTotal;
-
 
     for (let i = 0; i < array.length; i++) {
         itemTotal += (array[i]["quantity"] * array[i]["price"]);
@@ -72,41 +68,41 @@ function orderTotal(array) {
 }
 
 
-//CALLBACK FUNCTIONS**************************************************************
+// CALLBACK FUNCTIONS **************************************************************
 
-//EDIT - Self contain
+//EDIT - Self contain. Imagine using this for other array of objects. How can I change this so it's reusable.
+
 const addProduct = (event) => {
 
     const addToCartBtn = event.target;
 
     if (addToCartBtn.classList.contains("js-add-to-cart")) {
 
-        const addToCartBtn = event.target;
-        const product = event.target.parentNode.parentNode.parentNode.parentNode;
-        const productID = product.id;
-        const productQuantitySelector = product.querySelector(".js-product-quantity");
-        const productQuantity = Number(product.querySelector(".js-product-quantity").value);
-        const productData = findProductObject(donutObjects, productID);
-        const editBtn = product.querySelector(".js-edit-btn");
+        const buttonId = addToCartBtn.id;
+        const productContainer = findProductContainer(buttonId);
+        const qtySelector = productContainer.querySelector(".js-product-quantity");
+        const qtyInputValue = Number(productContainer.querySelector(".js-product-quantity").value);
+        //EDIT NEEDED, this one is accessing donutObjects... figure another way to access, return this array maybe. 
+        const productObject = findProductObject(donutObjects, buttonId);
+        const editBtn = productContainer.querySelector(".js-edit-btn");
 
-        productData.quantity = productQuantity;
+        setQty(qtyInputValue, productObject);
 
-        console.log(donutObjects);
-
-        //Update Order Total
+        //Update Order Total --- EDIT NEEDED, Outside variable
         orderTotalDiv.innerHTML = orderTotal(donutObjects);
 
         //Toggle Buttons
         addToCartBtn.classList.add("d-none");
         editBtn.classList.remove("d-none");
 
-        productQuantitySelector.setAttribute("disabled", "")
+        qtySelector.setAttribute("disabled", "")
 
+        console.log(donutObjects);
 
         event.preventDefault();
-
     }
 }
+
 
 const editCart = (event) => {
 
@@ -117,8 +113,6 @@ const editCart = (event) => {
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const addToCartBtn = product.querySelector(".js-add-to-cart");
         const productQuantitySelector = product.querySelector(".js-product-quantity");
-
-        console.log("test");
         
         //Toggle Buttons
         addToCartBtn.classList.remove("d-none");

@@ -15,13 +15,18 @@ const generateContent = () => {
     for (let i = 0; i < donutObjects.length; i++) {
         html += `
                 <div class="col-lg-4 col-md-6">
-                <div class="card js-get-id js-product-${donutObjects[i]["id"]}">
+                <div class="card mt-4 js-get-id js-product-${donutObjects[i]["id"]}">
                 <div class="card-body">
                 `;
         html += `
+                 <div class="d-flex justify-content-between">
+                    <div>
                     <h5 class="card-title js-product-name">${donutObjects[i]["name"]}</h5>
                     <p class="card-text">${donutObjects[i]["description"]}</p>
-                    <h6>Price: $${donutObjects[i]["price"]}0</h6>
+                    </div>
+                    <img class="w-25 pl-3" src="img/donut.svg">
+                  </div>
+                    <h6 class="mt-3">Price: $${donutObjects[i]["price"]}0</h6>
                     <form name="product" class="product">
                     <div class="form-group">
                       <label class="my-1 mr-2" for="vcc-qty">
@@ -30,8 +35,7 @@ const generateContent = () => {
 
                       </label>
                       <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vcc-qty" name="quantity">
-                        <option selected>Choose...</option>
-                        <option value="0">0</option>
+                        <option selected value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

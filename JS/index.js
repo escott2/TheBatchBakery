@@ -81,15 +81,15 @@ function generateOrderTotal(array, displayDiv) {
     orderTotal = itemTotal + deliveryCharge + salesTax;
 
     totalHtml += `
-                <ul class="list-unstyled">
-                    <li>Item Total: $${itemTotal.toFixed(2)}</li>
-                    <li>Delivery: $${deliveryCharge.toFixed(2)}</li>
-                    <li>Tax: $${salesTax.toFixed(2)}</li>
-                    <li> Order Total: $${orderTotal.toFixed(2)}</li>
+                <ul class="list-unstyled ml-4 mt-3">
+                    <li><span class="font-weight-bold">Item Total:</span> $${itemTotal.toFixed(2)}</li>
+                    <li><span class="font-weight-bold">Delivery:</span> $${deliveryCharge.toFixed(2)}</li>
+                    <li><span class="font-weight-bold">Tax:</span> $${salesTax.toFixed(2)}</li>
+                    <li><span class="font-weight-bold">Order Total:</span> $${orderTotal.toFixed(2)}</li>
                 </ul>
                 `;
 
-    orderTotalDiv.innerHTML = totalHtml;
+    displayDiv.innerHTML = totalHtml;
     
 }
 
@@ -108,11 +108,14 @@ const addToCart = (event) => {
 
         //unique id on button, importance: associated with unique class name on parent container. 
         const buttonId = addToCartBtn.id;
+        const continueBtn = document.querySelector(".js-continue-btn");
 
         //Higher Order Function -- parameters will quickly fill in parameters below...)
 
         addProduct(donutObjects, buttonId);
         generateOrderTotal(donutObjects, orderTotalDiv);
+        continueBtn.classList.remove("d-none");
+
 
         
         event.preventDefault();
@@ -155,7 +158,7 @@ const editCart = (event) => {
 
     if (editBtn.classList.contains("js-edit-btn")) {
 
-        
+
 
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const addToCartBtn = product.querySelector(".js-add-to-cart");

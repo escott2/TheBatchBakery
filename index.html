@@ -130,196 +130,205 @@
       <div class="row justify-content-end">
         <button
           type="button"
-          class="btn btn-success mr-4 d-none js-continue-btn"
+          class="btn btn-success mr-4 d-none js-menu-continue-btn"
         >
           Continue
         </button>
       </div>
     </div>
 
-    <!-- Checkout or Delivery -->
-    <div class="container bg-light mt-4 py-4 js-menu-div">
+    <!-- Options -->
+    <div class="container bg-light mt-4 py-4 d-none js-option-div">
       <div class="row">
-        <form>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio1"
-              value="option1"
-            />
-            <label class="form-check-label" for="inlineRadio1">Pickup</label>
+        <form class="mx-4">
+          <h2>Order Options</h2>
+          <p>How would you like to receive your order?</p>
+          <div class="form-row">
+            <div class="form-group col">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="option"
+                  id="option-pickup"
+                  value="pickup"
+                  required
+                />
+                <label class="form-check-label" for="option-pickup">Pickup</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="option"
+                  id="option-delivery"
+                  value="delivery"
+                />
+                <label class="form-check-label" for="option-delivery">Delivery</label>
+              </div>
+            </div>
           </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-              value="option2"
-            />
-            <label class="form-check-label" for="inlineRadio2">Delivery</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Continue</button>
+          <button type="submit" class="btn btn-success js-option-continue-btn">Continue</button>
         </form>
       </div>
     </div>
 
+
+
     <!-- Pickup Customer Info -->
-    <div class="container bg-light mt-4 py-4 js-form-div">
+    <div class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
       <div class="row js-customer-form">
-        <form>
+        <form class="mx-4">
           <h2>Pickup Information</h2>
+          <p>Please complete all fields.</p>
           <div class="form-row">
             <div class="form-group col">
-              <label for="first-name">First Name</label>
+              <label for="pickup-first-name">First Name</label>
               <input
                 type="text"
                 class="form-control"
-                id="first-name"
+                id="pickup-first-name"
                 placeholder="First name"
+                required
               />
             </div>
             <div class="col">
-              <label for="first-name">Last Name</label>
-              <input type="text" class="form-control" placeholder="Last name" />
+              <label for="pickup-last-name">Last Name</label>
+              <input type="text" class="form-control" id="pickup-last-name" placeholder="Last name" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="inputEmail4">Email</label>
+              <label for="pickup-email">Email</label>
               <input
                 type="email"
                 class="form-control"
-                id="inputEmail4"
+                id="pickup-email"
                 placeholder="Email"
+                required
               />
             </div>
           </div>
 
-
-
           <div class="form-row">
             <div class=" form-group col">
-              <label for="tel-input">Telephone</label>
-              <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input">
+              <label for="pickup-tel-input">Telephone</label>
+              <input class="form-control" type="tel" id="pickup-tel-input" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col">
-              <label for="date-input">Date</label>
-              <input class="form-control" type="date" value="2011-08-19" id="date-input">
+              <label for="pickup-date-input">Date</label>
+              <input class="form-control" type="date" value="2020-10-01" id="pickup-date-input" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-10">
-              <label for="time-input">Time</label>
-              <input class="form-control" type="time" value="13:45:00" id="time-input">
+              <label for="pickup-time-input">Time</label>
+              <input class="form-control" type="time" value="10:00:00" id="pickup-time-input" required>
             </div>
           </div>
 
-
-
-          <button type="submit" class="btn btn-primary">Continue</button>
+          <button type="submit" class="btn btn-success js-pickup-continue-btn">Continue</button>
         </form>
       </div>
     </div>
 
 
      <!-- Delivery Customer Info -->
-     <div class="container bg-light mt-4 py-4 js-form-div">
+     <div class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
       <div class="row js-customer-form">
-        <form>
+        <form class="mx-4">
           <h2>Delivery Information</h2>
+          <p>Please complete all fields.</p>
           <div class="form-row">
             <div class="form-group col">
-              <label for="first-name">First Name</label>
+              <label for="del-first-name">First Name</label>
               <input
                 type="text"
                 class="form-control"
-                id="first-name"
+                id="del-first-name"
                 placeholder="First name"
+                required
               />
             </div>
             <div class="col">
-              <label for="first-name">Last Name</label>
-              <input type="text" class="form-control" placeholder="Last name" />
+              <label for="del-last-name">Last Name</label>
+              <input type="text" class="form-control" id="del-last-name" placeholder="Last name" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="inputEmail4">Email</label>
+              <label for="del-email">Email</label>
               <input
                 type="email"
                 class="form-control"
-                id="inputEmail4"
+                id="del-email"
                 placeholder="Email"
+                required
               />
             </div>
           </div>
           <div class="form-group">
-            <label for="inputAddress">Address</label>
+            <label for="del-address">Address</label>
             <input
               type="text"
               class="form-control"
-              id="inputAddress"
+              id="del-address"
               placeholder="1234 Main St"
+              required
             />
           </div>
           <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
+            <label for="del-address2">Address 2</label>
             <input
               type="text"
               class="form-control"
-              id="inputAddress2"
+              id="del-address2"
               placeholder="Apartment, studio, or floor"
             />
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity" />
+              <label for="del-city">City</label>
+              <input type="text" class="form-control" id="del-city" required/>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
+              <label for="del-state">State</label>
+              <select id="del-state" class="form-control">
                 <option selected>Choose...</option>
                 <option>...</option>
               </select>
             </div>
             <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip" />
+              <label for="del-zip">Zip</label>
+              <input type="text" class="form-control" id="del-zip" required />
             </div>
           </div>
 
           <div class="form-row">
             <div class=" form-group col">
-              <label for="tel-input">Telephone</label>
-              <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input">
+              <label for="del-tel-input">Telephone</label>
+              <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="del-tel-input" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col">
-              <label for="date-input">Date</label>
-              <input class="form-control" type="date" value="2011-08-19" id="date-input">
+              <label for="del-date-input">Date</label>
+              <input class="form-control" type="date" value="2020-10-01" id="del-date-input" required>
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-10">
-              <label for="time-input">Time</label>
-              <input class="form-control" type="time" value="13:45:00" id="time-input">
+              <label for="del-time-input">Time</label>
+              <input class="form-control" type="time" value="10:00:00" id="del-time-input" required>
             </div>
           </div>
-
-
-
-          <button type="submit" class="btn btn-primary">Continue</button>
+          <button type="submit" class="btn btn-success js-delivery-continue-btn">Continue</button>
         </form>
       </div>
     </div>

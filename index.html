@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>The Batch Bakery</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>The Batch Bakery</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="custom.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <link rel="stylesheet" href="custom.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-
-  <!-- <script type="text/javascript" src="data/products.js"></script>
+    <!-- <script type="text/javascript" src="data/products.js"></script>
   <script type="text/javascript" src="JS/product.js"></script> -->
+  </head>
 
-</head>
-
-<body>
-
-  <div class="container-fluid mt-4">
-    <div class="row justify-content-start-sm justify-content-center-xs">
-      <header>
-        <div class="d-sm-flex justify-content-start align-items-center">
-          <div class="title-wrapper text-center ml-4-sm">
-            <h1 class="display-4">The Batch Bakery</h1>
+  <body>
+    <div class="container-fluid mt-4">
+      <div class="row justify-content-start-sm justify-content-center-xs">
+        <header>
+          <div class="d-sm-flex justify-content-start align-items-center">
+            <div class="title-wrapper text-center ml-4-sm">
+              <h1 class="display-4">The Batch Bakery</h1>
+            </div>
+            <div class="donut-wrapper">
+              <img class="donut-img h-auto" src="img/donut-header-img.png" />
+            </div>
           </div>
-          <div class="donut-wrapper">
-            <img class="donut-img h-auto" src="img/donut-header-img.png" />
-          </div>
-        </div>
-      </header>
+        </header>
 
-  <!-- <div class="container-fluid mt-4">
+        <!-- <div class="container-fluid mt-4">
     <div class="row d-flex justify-content-between">
       <header>
         <div class="d-sm-flex justify-content-start align-items-center">
@@ -47,24 +55,31 @@
         </div>
       </header> -->
 
+        <nav class="navbar navbar-expand-md navbar-light pl-5 mt-3 w-100">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-
-      <nav class="navbar navbar-expand-md navbar-light pl-5 mt-3 w-100">
-        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto lato--bold">
-            <li class="nav-item active mr-4">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item mr-4">
-              <a class="nav-link" href="#">Menu</a>
-            </li>
-            <!-- <li class="nav-item dropdown mr-4">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto lato--bold">
+              <li class="nav-item active mr-4">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item mr-4">
+                <a class="nav-link" href="#">Menu</a>
+              </li>
+              <!-- <li class="nav-item dropdown mr-4">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Account
@@ -76,57 +91,260 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li> -->
-            <li class="nav-item mr-4">
-              <a class="nav-link" href="#">Cart</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 fontAwesome" type="search" placeholder="&#xF002;" aria-label="Search" />
-            <button class="btn bg-dark text-white px-4 my-2 my-sm-0 lato--bold" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
+              <li class="nav-item mr-4">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2 fontAwesome"
+                type="search"
+                placeholder="&#xF002;"
+                aria-label="Search"
+              />
+              <button
+                class="btn bg-dark text-white px-4 my-2 my-sm-0 lato--bold"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
     </div>
-  </div>
 
-
-
-
-  <div class="container bg-light mt-4 py-4 js-menu-div">
-    <div class="row">
-      <button class="btn bg-dark text-white px-4 my-2 mx-auto my-sm-0 lato--bold js-load-menu">View Menu</button>
+    <!-- MENU -->
+    <div class="container bg-light mt-4 py-4 js-menu-div">
+      <div class="row">
+        <button
+          class="btn bg-dark text-white px-4 my-2 mx-auto my-sm-0 lato--bold js-load-menu"
+        >
+          View Menu
+        </button>
+      </div>
+      <div class="row test js-order-screen"></div>
+      <div
+        class="row border-top border-secondary mt-4 js-order-screen-total"
+      ></div>
+      <div class="row justify-content-end">
+        <button
+          type="button"
+          class="btn btn-success mr-4 d-none js-continue-btn"
+        >
+          Continue
+        </button>
+      </div>
     </div>
-    <div class="row test js-order-screen">
+
+    <!-- Checkout or Delivery -->
+    <div class="container bg-light mt-4 py-4 js-menu-div">
+      <div class="row">
+        <form>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="option1"
+            />
+            <label class="form-check-label" for="inlineRadio1">Pickup</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="option2"
+            />
+            <label class="form-check-label" for="inlineRadio2">Delivery</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Continue</button>
+        </form>
+      </div>
     </div>
-    <div class="row border-top border-secondary mt-4 js-order-screen-total"></div>
-    <div class="row justify-content-end">
-      <button type="button" class="btn btn-success mr-4 d-none js-continue-btn">Continue</button>
+
+    <!-- Pickup Customer Info -->
+    <div class="container bg-light mt-4 py-4 js-form-div">
+      <div class="row js-customer-form">
+        <form>
+          <h2>Pickup Information</h2>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="first-name">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="first-name"
+                placeholder="First name"
+              />
+            </div>
+            <div class="col">
+              <label for="first-name">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="inputEmail4">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail4"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+
+
+
+          <div class="form-row">
+            <div class=" form-group col">
+              <label for="tel-input">Telephone</label>
+              <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="date-input">Date</label>
+              <input class="form-control" type="date" value="2011-08-19" id="date-input">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-10">
+              <label for="time-input">Time</label>
+              <input class="form-control" type="time" value="13:45:00" id="time-input">
+            </div>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary">Continue</button>
+        </form>
+      </div>
     </div>
-  </div>
+
+
+     <!-- Delivery Customer Info -->
+     <div class="container bg-light mt-4 py-4 js-form-div">
+      <div class="row js-customer-form">
+        <form>
+          <h2>Delivery Information</h2>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="first-name">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="first-name"
+                placeholder="First name"
+              />
+            </div>
+            <div class="col">
+              <label for="first-name">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="inputEmail4">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail4"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress"
+              placeholder="1234 Main St"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress2"
+              placeholder="Apartment, studio, or floor"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity" />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class=" form-group col">
+              <label for="tel-input">Telephone</label>
+              <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="date-input">Date</label>
+              <input class="form-control" type="date" value="2011-08-19" id="date-input">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-10">
+              <label for="time-input">Time</label>
+              <input class="form-control" type="time" value="13:45:00" id="time-input">
+            </div>
+          </div>
 
 
 
+          <button type="submit" class="btn btn-primary">Continue</button>
+        </form>
+      </div>
+    </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-  </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
 
-  <script type="text/javascript" src="data/products.js"></script>
-  <script type="text/javascript" src="JS/generate-order-screen.js"></script>
-  <script type="text/javascript" src="JS/index.js"></script>
-
-
-</body>
-
+    <script type="text/javascript" src="data/products.js"></script>
+    <script type="text/javascript" src="JS/generate-order-screen.js"></script>
+    <script type="text/javascript" src="JS/index.js"></script>
+  </body>
 </html>

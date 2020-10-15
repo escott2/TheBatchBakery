@@ -52,6 +52,10 @@ nav .btn {
         display: none;
     }
 
+    .card-body .donut-menu-img {
+        height: 1%;
+    }
+
 
 
 

@@ -33,7 +33,9 @@ nav .btn {
     border: none;
 }
 
-
+.navbar-light {
+    background-color: #F3E9DA;
+}
 
 @media (max-width: 576px) {
 

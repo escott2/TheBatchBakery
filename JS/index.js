@@ -1,4 +1,9 @@
 let orderTotalDiv = document.querySelector(".js-order-screen-total");
+const continueBtn = document.querySelector(".js-continue-btn");
+const menuDiv = document.querySelector(".js-menu-div");
+
+
+
 
 
 
@@ -186,3 +191,14 @@ orderScreen.addEventListener("click", addToCart);
 //edit button event listener>
 // -- when clicked, edit button add class display none, add-to-cart button remove display none class. 
 orderScreen.addEventListener("click", editCart);
+
+continueBtn.addEventListener("click", () => {
+    hideDiv(menuDiv);
+    // showUserForm;
+
+});
+
+
+function hideDiv(divToHide) {
+    divToHide.classList.add("d-none");
+}

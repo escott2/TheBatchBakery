@@ -24,7 +24,7 @@ const generateContent = () => {
                     <h5 class="card-title js-product-name">${donutObjects[i]["name"]}</h5>
                     <p class="card-text">${donutObjects[i]["description"]}</p>
                     </div>
-                    <img class="w-25 pl-3" src="img/donut.svg">
+                    <img class="donut-menu-img w-25 pl-3" src="img/donut.svg">
                   </div>
                     <h6 class="mt-3">Price: $${donutObjects[i]["price"]}0</h6>
                     <form name="product" class="product">

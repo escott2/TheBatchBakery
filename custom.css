@@ -29,12 +29,13 @@ nav .btn {
 }
 
 .btn-danger {
-    background-color: #8E3E1B;
+    background-color: #5E423D;
     border: none;
 }
 
-
-
+.navbar-light {
+    background-color: #F3E9DA;
+}
 
 @media (max-width: 576px) {
 

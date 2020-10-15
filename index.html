@@ -20,8 +20,9 @@
 </head>
 
 <body>
+
   <div class="container-fluid mt-4">
-    <div class="row d-flex justify-content-between">
+    <div class="row justify-content-start-sm justify-content-center-xs">
       <header>
         <div class="d-sm-flex justify-content-start align-items-center">
           <div class="title-wrapper text-center ml-4-sm">
@@ -33,7 +34,22 @@
         </div>
       </header>
 
-      <nav class="navbar navbar-expand-lg navbar-light">
+  <!-- <div class="container-fluid mt-4">
+    <div class="row d-flex justify-content-between">
+      <header>
+        <div class="d-sm-flex justify-content-start align-items-center">
+          <div class="title-wrapper text-center ml-4-sm">
+            <h1 class="display-4">The Batch Bakery</h1>
+          </div>
+          <div class="donut-wrapper">
+            <img class="donut-img h-auto" src="img/donut-header-img.png" />
+          </div>
+        </div>
+      </header> -->
+
+
+
+      <nav class="navbar navbar-expand-md navbar-light pl-5 mt-3 w-100">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +97,10 @@
     </div>
     <div class="row test js-order-screen">
     </div>
-    <div class="row js-order-screen-total"></div>
+    <div class="row border-top border-secondary mt-4 js-order-screen-total"></div>
+    <div class="row justify-content-end">
+      <button type="button" class="btn btn-success mr-4 d-none js-continue-btn">Continue</button>
+    </div>
   </div>
 
 

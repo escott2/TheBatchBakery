@@ -1,33 +1,43 @@
 let orderTotalDiv = document.querySelector(".js-order-screen-total");
 
-//Begin findProductObject Variables
-// const button = event.target;
-// const product = event.target.parentNode.parentNode.parentNode.parentNode;
-// const productID = product.id;
-// const productQuantity = Number(product.querySelector(".js-product-quantity").value);
-// const productData = findProductObject(donutObjects, productID);
-// const productEditBtn = product.querySelector(".js-edit-btn");
-//End findProductObject Variables
-
-//REFACTORING
-
-//Access all add to cart buttons - these can be targeted with event in callback function. 
-const addToCartBtns = document.getElementsByClassName("js-add-to-cart");
-// const product;
-// const productID;
-// const productQty;
-// const productData;
-// const productEditBtn;
 
 
 
 
 
+// FUNCTIONS **************************************************************
+
+function addProduct (array, buttonId) {
+
+    const productId = buttonId.substr(11);
+    const productContainer = findProductContainer(buttonId);
+    const qtySelector = productContainer.querySelector(".js-product-quantity");
+    const qtyInputValue = Number(productContainer.querySelector(".js-product-quantity").value);
+    const productObject = findProductObject(array, productId);
+    const addToCartBtn = productContainer.querySelector(".js-add-to-cart");
+    const editBtn = productContainer.querySelector(".js-edit-btn");
+
+    setQty(qtyInputValue, productObject);
+
+    //toggleButtons(addToCartBtn, editBtn);
+    addToCartBtn.classList.add("d-none");
+    editBtn.classList.remove("d-none");
+    qtySelector.setAttribute("disabled", "")
 
 
+    console.log(array);
+
+    }
 
 
-
+/**
+ * Returns parent div with unique class name, matching button's ID. 
+ * @param {string} ...
+ */
+function findProductContainer(buttonId) {
+    const parentDiv = document.querySelector(`.${buttonId}`);
+    return parentDiv;
+}
 
 /**
  * Returns object in array, by ID.
@@ -43,16 +53,25 @@ function findProductObject(array, productValue) {
 }
 
 /**
+ * Sets quantity value in object.
+ * @param {} ...
+ * @param {string} ...
+ * 
+ */
+function setQty(qtyInputValue, productObject) {
+    productObject.quantity = qtyInputValue;
+}
+
+/**
  * Returns total cost of order.
  * @param {Array<Object>} array The array of objects including quantity and total properties.
  */
-function orderTotal(array) {
+function generateOrderTotal(array, displayDiv) {
     let totalHtml = "";
     let itemTotal = 0;
     let deliveryCharge = 5.00
     let salesTax;
     let orderTotal;
-
 
     for (let i = 0; i < array.length; i++) {
         itemTotal += (array[i]["quantity"] * array[i]["price"]);
@@ -61,52 +80,77 @@ function orderTotal(array) {
     salesTax = itemTotal * 0.06875;
     orderTotal = itemTotal + deliveryCharge + salesTax;
 
-    return totalHtml += `
-                    <ul class="list-unstyled">
-                        <li>Item Total: $${itemTotal.toFixed(2)}</li>
-                        <li>Delivery: $${deliveryCharge.toFixed(2)}</li>
-                        <li>Tax: $${salesTax.toFixed(2)}</li>
-                        <li> Order Total: $${orderTotal.toFixed(2)}</li>
-                    </ul>
-                    `;
+    totalHtml += `
+                <ul class="list-unstyled ml-4 mt-3">
+                    <li><span class="font-weight-bold">Item Total:</span> $${itemTotal.toFixed(2)}</li>
+                    <li><span class="font-weight-bold">Delivery:</span> $${deliveryCharge.toFixed(2)}</li>
+                    <li><span class="font-weight-bold">Tax:</span> $${salesTax.toFixed(2)}</li>
+                    <li><span class="font-weight-bold">Order Total:</span> $${orderTotal.toFixed(2)}</li>
+                </ul>
+                `;
+
+    displayDiv.innerHTML = totalHtml;
+    
 }
 
 
-//CALLBACK FUNCTIONS**************************************************************
 
-//EDIT - Self contain
-const addProduct = (event) => {
+
+// CALLBACK FUNCTIONS **************************************************************
+
+//EDIT - Self contain. Imagine using this for other array of objects. How can I change this so it's reusable.
+
+const addToCart = (event) => {
 
     const addToCartBtn = event.target;
 
     if (addToCartBtn.classList.contains("js-add-to-cart")) {
 
-        const addToCartBtn = event.target;
-        const product = event.target.parentNode.parentNode.parentNode.parentNode;
-        const productID = product.id;
-        const productQuantitySelector = product.querySelector(".js-product-quantity");
-        const productQuantity = Number(product.querySelector(".js-product-quantity").value);
-        const productData = findProductObject(donutObjects, productID);
-        const editBtn = product.querySelector(".js-edit-btn");
+        //unique id on button, importance: associated with unique class name on parent container. 
+        const buttonId = addToCartBtn.id;
+        const continueBtn = document.querySelector(".js-continue-btn");
 
-        productData.quantity = productQuantity;
+        //Higher Order Function -- parameters will quickly fill in parameters below...)
 
-        console.log(donutObjects);
-
-        //Update Order Total
-        orderTotalDiv.innerHTML = orderTotal(donutObjects);
-
-        //Toggle Buttons
-        addToCartBtn.classList.add("d-none");
-        editBtn.classList.remove("d-none");
-
-        productQuantitySelector.setAttribute("disabled", "")
+        addProduct(donutObjects, buttonId);
+        generateOrderTotal(donutObjects, orderTotalDiv);
+        continueBtn.classList.remove("d-none");
 
 
+        
         event.preventDefault();
 
+
+
+        // function addProdutTest (array) {
+
+        // const buttonId = addToCartBtn.id;
+        // const productContainer = findProductContainer(buttonId);
+        // const qtySelector = productContainer.querySelector(".js-product-quantity");
+        // const qtyInputValue = Number(productContainer.querySelector(".js-product-quantity").value);
+        // //EDIT NEEDED, this one is accessing donutObjects... figure another way to access, return this array maybe. 
+        // const productObject = findProductObject(donutObjects, buttonId);
+        // const editBtn = productContainer.querySelector(".js-edit-btn");
+
+        // setQty(qtyInputValue, productObject);
+
+        // //Update Order Total --- EDIT NEEDED, Outside variable
+        // orderTotalDiv.innerHTML = orderTotal(donutObjects);
+
+        // //Toggle Buttons
+        // addToCartBtn.classList.add("d-none");
+        // editBtn.classList.remove("d-none");
+
+        // qtySelector.setAttribute("disabled", "")
+
+        // console.log(donutObjects);
+
+        // event.preventDefault();
+
+        // }
     }
 }
+
 
 const editCart = (event) => {
 
@@ -114,16 +158,15 @@ const editCart = (event) => {
 
     if (editBtn.classList.contains("js-edit-btn")) {
 
+
+
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const addToCartBtn = product.querySelector(".js-add-to-cart");
         const productQuantitySelector = product.querySelector(".js-product-quantity");
-
-        console.log("test");
         
         //Toggle Buttons
         addToCartBtn.classList.remove("d-none");
         editBtn.classList.add("d-none");
-
         productQuantitySelector.removeAttribute("disabled", "")
 
         event.preventDefault();
@@ -136,7 +179,7 @@ const editCart = (event) => {
 
 
 
-orderScreen.addEventListener("click", addProduct);
+orderScreen.addEventListener("click", addToCart);
 
 
 

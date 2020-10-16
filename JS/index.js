@@ -2,12 +2,16 @@
 //---Div
 const orderTotalDiv = document.querySelector(".js-order-screen-total");
 const menuDiv = document.querySelector(".js-menu-div");
-const cartFormDiv = document.querySelector(".js-cart-div");
+const cartDiv = document.querySelector(".js-cart-div");
 const optionDiv = document.querySelector(".js-option-div");
 const pickupFormDiv = document.querySelector(".js-pickup-form-div");
 const deliveryFormDiv = document.querySelector(".js-delivery-form-div");
 const cartContentDiv = document.querySelector(".js-cart-content");
 const cartTotalDiv = document.querySelector(".js-cart-total");
+const reviewDiv = document.querySelector(".js-review-div");
+const reviewContentDiv = document.querySelector(".js-review-content-div");
+const reviewTotalDiv = document.querySelector(".js-review-total");
+
 
 
 
@@ -17,6 +21,7 @@ const cartContinueBtn = document.querySelector(".js-cart-continue-btn");
 const optionContinueBtn = document.querySelector(".js-option-continue-btn");
 const pickupContinueBtn = document.querySelector(".js-pickup-continue-btn");
 const deliveryContinueBtn = document.querySelector(".js-delivery-continue-btn");
+const reviewContinueBtn = document.querySelector(".js-review-continue-btn");
 
 
 
@@ -38,9 +43,6 @@ function addProduct (array, buttonId) {
     addToCartBtn.classList.add("d-none");
     editBtn.classList.remove("d-none");
     qtySelector.setAttribute("disabled", "")
-
-
-    console.log(array);
 
     }
 
@@ -192,19 +194,22 @@ const editCart = (event) => {
 
 orderScreen.addEventListener("click", addToCart);
 
-//edit button event listener>
-// -- when clicked, edit button add class display none, add-to-cart button remove display none class. 
+//REFACTOR
 orderScreen.addEventListener("click", editCart);
+
+//Start continue button event listeners
 
 menuContinueBtn.addEventListener("click", () => {
     generateCartContent(donutObjects, cartContentDiv);
     hideDiv(menuDiv);
-    showDiv(cartContentDiv);
+    showDiv(cartDiv);
     generateOrderTotal(donutObjects, cartTotalDiv);
 });
 
-
-
+cartContinueBtn.addEventListener("click", () => {
+    hideDiv(cartDiv);
+    showDiv(optionDiv);  
+});
 
 optionContinueBtn.addEventListener("click", (event) => {
 
@@ -219,21 +224,34 @@ optionContinueBtn.addEventListener("click", (event) => {
          else if (radioValue === "delivery") {
             showDiv (deliveryFormDiv);
          } 
-
 });
 
-// pickupContinueBtn.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     hideDiv(pickupFormDiv);
-//     showDiv();  
-// })
+pickupContinueBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    generateCartContent(donutObjects, reviewContentDiv);
+    generateOrderTotal(donutObjects, reviewTotalDiv);
+    hideDiv(pickupFormDiv);
+    showDiv(reviewDiv);  
+})
 
-// deliveryContinueBtn.addEventListener("click", (event) => {
-    //event.preventDefault();
-    // hideDiv(deliveryFormDiv);
-    // showDiv();
-// })
+deliveryContinueBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    generateCartContent(donutObjects, reviewContentDiv);
+    generateOrderTotal(donutObjects, reviewTotalDiv);
+    hideDiv(deliveryFormDiv);
+    showDiv(reviewDiv);
+})
 
+
+
+
+//End continue button event listeners
+
+
+
+
+
+//move up to function area
 
 function hideDiv(divToHide) {
     divToHide.classList.add("d-none");

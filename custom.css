@@ -1,3 +1,9 @@
+/* Colors: 
+tan:  #F3E9DA
+brown:  #5E423D */
+
+
+
 header .display-4 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
@@ -20,21 +26,71 @@ nav .lato--bold,
     font-size: 1.5rem;
 }
 
-.fontAwesome {
-    font-family: 'Helvetica', FontAwesome, sans-serif;
+nav .custom-font--jaldi {
+    font-family: 'Jaldi', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
 }
+
+
+/* .fontAwesome {
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+} */
 
 nav .btn {
     font-size: 1.25rem;
 }
 
+.coffee-pastry-img {
+    /* width: 300px;
+    height: auto; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.batch-bundle-img {
+    /* width: 310px;
+    height: auto; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .btn-danger {
-    background-color: #5E423D;
+    background-color: #D98236;
     border: none;
 }
 
-.navbar-light {
-    background-color: #F3E9DA;
+/* .navbar-light {
+    background-color: white;
+
+} */
+
+
+.round-btn {
+    width: 150px;
+    height: 150px;
+}
+
+.custom-background {
+    background-color: #E5E3E3;
+}
+
+@media (max-width: 768px) {
+
+    .custom-height {
+        height: 100px;
+    }
+
+    .batch-bundle-img {
+        width: 310px;
+        height: auto;
+        /* width: 100%;
+        height: 100%; */
+        /* object-fit: cover; */
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -52,6 +108,18 @@ nav .btn {
         display: none;
     }
 
+    /* .custom-height {
+        height: 150px;
+    }
+
+    .batch-bundle-img {
+        width: 310px;
+        height: auto;
+        /* width: 100%;
+        height: 100%; */
+        /* object-fit: cover; */
+    } */
+
     .card-body .donut-menu-img {
         height: 1%;
     }
@@ -59,6 +127,8 @@ nav .btn {
     .cart-content-container.bg-light {
         background-color:  #F3E9DA;
     }
+
+
 
 
 

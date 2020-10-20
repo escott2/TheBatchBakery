@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>The Batch Bakery</title>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="custom.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>The Batch Bakery</title>
 
-    <!-- <script type="text/javascript" src="data/products.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="custom.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- <script type="text/javascript" src="data/products.js"></script>
   <script type="text/javascript" src="JS/product.js"></script> -->
-  </head>
+</head>
 
-  <body>
-    <div class="container-fluid mt-4">
-      <div class="row justify-content-start-sm justify-content-center-xs">
-        <header>
-          <div class="d-sm-flex justify-content-start align-items-center">
-            <div class="title-wrapper text-center ml-4-sm">
-              <h1 class="display-4">The Batch Bakery</h1>
-            </div>
-            <div class="donut-wrapper">
-              <img class="donut-img h-auto" src="img/donut-header-img.png" />
-            </div>
+<body>
+  <div class="container-fluid mt-4">
+    <div class="row justify-content-start-sm justify-content-center-xs">
+      <header>
+        <div class="d-sm-flex justify-content-start align-items-center">
+          <div class="title-wrapper text-center ml-4-sm">
+            <h1 class="display-4">The Batch Bakery</h1>
           </div>
-        </header>
+          <div class="donut-wrapper">
+            <img class="donut-img h-auto" src="img/donut-header-img.png" />
+          </div>
+        </div>
+      </header>
 
-        <!-- <div class="container-fluid mt-4">
+      <!-- <div class="container-fluid mt-4">
     <div class="row d-flex justify-content-between">
       <header>
         <div class="d-sm-flex justify-content-start align-items-center">
@@ -55,47 +44,26 @@
         </div>
       </header> -->
 
-        <nav class="navbar navbar-expand-md navbar-light pl-5 mt-3 w-100">
-          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <nav class="navbar navbar-expand-md navbar-light px-5 mt-3 w-100">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto lato--bold">
-              <li class="nav-item active mr-4">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item mr-4">
-                <a class="nav-link" href="#">Menu</a>
-              </li>
-              <!-- <li class="nav-item dropdown mr-4">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Account
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Account Information</a>
-                <a class="dropdown-item" href="#">Order History</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> -->
-              <li class="nav-item mr-4">
-                <a class="nav-link" href="#">Cart</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto custom-font--jaldi">
+            <li class="nav-item active mr-4">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-4">
+              <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li class="nav-item mr-4">
+              <a class="nav-link" href="#">Cart</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
               <input
                 class="form-control mr-sm-2 fontAwesome"
                 type="search"
@@ -108,294 +76,338 @@
               >
                 Search
               </button>
-            </form>
-          </div>
-        </nav>
+            </form> -->
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Home -->
+
+  <div class="container-sm mt-5-lg mt-3 px-4 js-home-div">
+
+    <div class="row mt-4 justify-content-center no-gutters d-flex align-items-stretch">
+      <div class="col-lg-6 col-md-8 px-4 py-4 custom-background order-md-1 order-12 d-flex flex-column justify-content-center">
+        <h2 class="text-center">Selling Batches Since 1962</h2>
+        <p>With over 50 years of experience, we know how to make a donut. But that's not all we do! Our award winning
+          donuts are sold alongside artisan bread and delicate pastries. We also take a lot of pride in our batch
+          coffee.</p>
+      </div>
+
+      <div class="col-lg-3 col-md-4 pl-md-3 order-md-12 order-1 custom-height">
+        <img src="img/coffee-pastry.jpg" class="coffee-pastry-img">
       </div>
     </div>
 
-    <!-- MENU -->
-    <div class="container bg-light mt-4 py-4 js-menu-div">
-      <div class="row">
+    <div class="row mt-4 justify-content-end no-gutters">
+      <div class="col-lg-3 col-md-4 col-3 pr-3">
+        <img src="img/batch-bundle.jpg" class="batch-bundle-img">
+      </div>
+      <div class="col-lg-6 col-md-8 col-9 px-3 py-4 custom-background text-center">
+        <h2>Batch Bundles</h2>
+        <p>Not sure what to order? Try a batch bundle! With curated combos that let your explore a variety of items on
+          our menu.</p>
+      </div>
+    </div>
+
+    <!-- 
+      frosting lovers
+      sprinkles
+      crumble
+      lewis & clark
+      fall/seasonal medley
+      favorites
+     -->
+
+    <div class="row mt-4 justify-content-end no-gutters">
+
+      <div class="col-lg-9 custom-background py-4 text-center">
+        <h2>Come on Over or We'll Come to You</h2>
+        <p>Introducing pickup and delivery!</p>
+      </div>
+
+    </div>
+
+    <div class="row mt-4 justify-content-center">
+      <div class="col-lg-4 py-4 text-center">
+        <h2>Ready to Order?</h2>
+        <div class="round-div rounded-circle custom-background d-flex align-items-center mx-auto">
+          <button class="btn round-btn rounded-circle bg-dark text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu">
+            View Menu
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-4 py-4 text-center">
+          <h2>Ready to Order?</h2>
+          <div class="round-div rounded-circle custom-background d-flex align-items-center mx-auto">
+            <button
+            class="btn round-btn rounded-circle bg-dark text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu"
+          >
+            View Menu
+          </button>
+         </div>
+        </div>
+
+        <div class="col-lg-4 py-4 text-center">
+          <h2>Ready to Order?</h2>
+          <div class="round-div rounded-circle custom-background d-flex align-items-center mx-auto">
+            <button
+            class="btn round-btn rounded-circle bg-dark text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu"
+          >
+            View Menu
+          </button>
+         </div>
+        </div> -->
+    </div>
+    <!-- <div class="row">
+        <button
+          class="btn round-btn rounded-circle bg-dark text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu"
+        >
+          View Menu
+        </button>
+      </div> -->
+  </div>
+
+  <!-- MENU -->
+  <div class="container bg-light mt-4 py-4 js-menu-div">
+    <!-- <div class="row">
         <button
           class="btn bg-dark text-white px-4 my-2 mx-auto my-sm-0 lato--bold js-load-menu"
         >
           View Menu
         </button>
-      </div>
-      <div class="row test js-order-screen"></div>
-      <div
-        class="row border-top border-secondary mt-4 js-order-screen-total"
-      ></div>
-      <div class="row justify-content-end">
-        <button
-          type="button"
-          class="btn btn-success mr-4 d-none js-menu-continue-btn"
-        >
-          Continue
-        </button>
-      </div>
+      </div> -->
+    <div class="row test js-order-screen"></div>
+    <div class="row border-top border-secondary mt-4 js-order-screen-total"></div>
+    <div class="row justify-content-end">
+      <button type="button" class="btn btn-success mr-4 d-none js-menu-continue-btn">
+        Continue
+      </button>
     </div>
+  </div>
 
 
-    <!-- Cart -->
-    <div class="container bg-light mt-4 py-4 d-none js-cart-div">
-      <div class="row mx-4"">
+  <!-- Cart -->
+  <div class="container bg-light mt-4 py-4 d-none js-cart-div">
+    <div class="row mx-4"">
         <h2>Cart</h2>
-        <div class="container bg-light cart-content-container js-cart-content"></div>
-      </div>
-      <div class="row js-cart-total mx-3"></div>
-      <div class="row justify-content-end">
-            <button
-            type="button"
-            class="btn btn-success mr-4 js-cart-continue-btn"
-            >Continue
-            </button>
-      </div>
+        <div class=" container bg-light cart-content-container js-cart-content"></div>
+  </div>
+  <div class="row js-cart-total mx-3"></div>
+  <div class="row justify-content-end">
+    <button type="button" class="btn btn-success mr-4 js-cart-continue-btn">Continue
+    </button>
+  </div>
+  </div>
+
+
+  <!-- Options -->
+  <div class="container bg-light mt-4 py-4 d-none js-option-div">
+    <div class="row">
+      <form class="mx-4">
+        <h2>Order Options</h2>
+        <p>How would you like to receive your order?</p>
+        <div class="form-row">
+          <div class="form-group col">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="option" id="option-pickup" value="pickup" required />
+              <label class="form-check-label" for="option-pickup">Pickup</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="option" id="option-delivery" value="delivery" />
+              <label class="form-check-label" for="option-delivery">Delivery</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success js-option-continue-btn">Continue</button>
+      </form>
     </div>
+  </div>
 
 
-    <!-- Options -->
-    <div class="container bg-light mt-4 py-4 d-none js-option-div">
-      <div class="row">
-        <form class="mx-4">
-          <h2>Order Options</h2>
-          <p>How would you like to receive your order?</p>
-          <div class="form-row">
-            <div class="form-group col">
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="option"
-                  id="option-pickup"
-                  value="pickup"
-                  required
-                />
-                <label class="form-check-label" for="option-pickup">Pickup</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="option"
-                  id="option-delivery"
-                  value="delivery"
-                />
-                <label class="form-check-label" for="option-delivery">Delivery</label>
-              </div>
-            </div>
+
+  <!-- Pickup Customer Info -->
+  <div class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
+    <div class="row js-customer-form">
+      <form class="mx-4">
+        <h2>Pickup Information</h2>
+        <p>Please complete all fields.</p>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="pickup-first-name">First Name</label>
+            <input type="text" class="form-control" id="pickup-first-name" placeholder="First name" required />
           </div>
-          <button type="submit" class="btn btn-success js-option-continue-btn">Continue</button>
-        </form>
-      </div>
+          <div class="col">
+            <label for="pickup-last-name">Last Name</label>
+            <input type="text" class="form-control" id="pickup-last-name" placeholder="Last name" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="pickup-email">Email</label>
+            <input type="email" class="form-control" id="pickup-email" placeholder="Email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class=" form-group col">
+            <label for="pickup-tel-input">Telephone</label>
+            <input class="form-control" type="tel" id="pickup-tel-input" placeholder="555-555-5555"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label for="pickup-date-input">Date</label>
+            <input class="form-control" type="date" value="2020-10-01" id="pickup-date-input" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-10">
+            <label for="pickup-time-input">Time</label>
+            <input class="form-control" type="time" value="10:00:00" id="pickup-time-input" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success js-pickup-continue-btn">Continue</button>
+      </form>
     </div>
+  </div>
 
 
-
-    <!-- Pickup Customer Info -->
-    <div class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
-      <div class="row js-customer-form">
-        <form class="mx-4">
-          <h2>Pickup Information</h2>
-          <p>Please complete all fields.</p>
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="pickup-first-name">First Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="pickup-first-name"
-                placeholder="First name"
-                required
-              />
-            </div>
-            <div class="col">
-              <label for="pickup-last-name">Last Name</label>
-              <input type="text" class="form-control" id="pickup-last-name" placeholder="Last name" required />
-            </div>
+  <!-- Delivery Customer Info -->
+  <div class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
+    <div class="row js-customer-form">
+      <form class="mx-4">
+        <h2>Delivery Information</h2>
+        <p>Please complete all fields.</p>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="del-first-name">First Name</label>
+            <input type="text" class="form-control" id="del-first-name" placeholder="First name" required />
           </div>
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="pickup-email">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="pickup-email"
-                placeholder="Email"
-                required
-              />
-            </div>
+          <div class="col">
+            <label for="del-last-name">Last Name</label>
+            <input type="text" class="form-control" id="del-last-name" placeholder="Last name" required />
           </div>
-
-          <div class="form-row">
-            <div class=" form-group col">
-              <label for="pickup-tel-input">Telephone</label>
-              <input class="form-control" type="tel" id="pickup-tel-input" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input" required>
-            </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="del-email">Email</label>
+            <input type="email" class="form-control" id="del-email" placeholder="Email" required />
           </div>
-
-          <div class="row">
-            <div class="form-group col">
-              <label for="pickup-date-input">Date</label>
-              <input class="form-control" type="date" value="2020-10-01" id="pickup-date-input" required>
-            </div>
+        </div>
+        <div class="form-group">
+          <label for="del-address">Address</label>
+          <input type="text" class="form-control" id="del-address" placeholder="1234 Main St" required />
+        </div>
+        <div class="form-group">
+          <label for="del-address2">Address 2</label>
+          <input type="text" class="form-control" id="del-address2" placeholder="Apartment, studio, or floor" />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="del-city">City</label>
+            <input type="text" class="form-control" id="del-city" required />
           </div>
-
-          <div class="row">
-            <div class="form-group col-10">
-              <label for="pickup-time-input">Time</label>
-              <input class="form-control" type="time" value="10:00:00" id="pickup-time-input" required>
-            </div>
+          <div class="form-group col-md-4">
+            <label for="del-state">State</label>
+            <select id="del-state" class="form-control">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
           </div>
+          <div class="form-group col-md-2">
+            <label for="del-zip">Zip</label>
+            <input type="text" class="form-control" id="del-zip" required />
+          </div>
+        </div>
 
-          <button type="submit" class="btn btn-success js-pickup-continue-btn">Continue</button>
-        </form>
-      </div>
+        <div class="form-row">
+          <div class=" form-group col">
+            <label for="del-tel-input">Telephone</label>
+            <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              id="del-tel-input" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col">
+            <label for="del-date-input">Date</label>
+            <input class="form-control" type="date" value="2020-10-01" id="del-date-input" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-10">
+            <label for="del-time-input">Time</label>
+            <input class="form-control" type="time" value="10:00:00" id="del-time-input" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success js-delivery-continue-btn">Continue</button>
+      </form>
     </div>
+  </div>
 
 
-     <!-- Delivery Customer Info -->
-     <div class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
-      <div class="row js-customer-form">
-        <form class="mx-4">
-          <h2>Delivery Information</h2>
-          <p>Please complete all fields.</p>
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="del-first-name">First Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="del-first-name"
-                placeholder="First name"
-                required
-              />
-            </div>
-            <div class="col">
-              <label for="del-last-name">Last Name</label>
-              <input type="text" class="form-control" id="del-last-name" placeholder="Last name" required />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="del-email">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="del-email"
-                placeholder="Email"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="del-address">Address</label>
-            <input
-              type="text"
-              class="form-control"
-              id="del-address"
-              placeholder="1234 Main St"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="del-address2">Address 2</label>
-            <input
-              type="text"
-              class="form-control"
-              id="del-address2"
-              placeholder="Apartment, studio, or floor"
-            />
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="del-city">City</label>
-              <input type="text" class="form-control" id="del-city" required/>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="del-state">State</label>
-              <select id="del-state" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="del-zip">Zip</label>
-              <input type="text" class="form-control" id="del-zip" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class=" form-group col">
-              <label for="del-tel-input">Telephone</label>
-              <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="del-tel-input" required>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="form-group col">
-              <label for="del-date-input">Date</label>
-              <input class="form-control" type="date" value="2020-10-01" id="del-date-input" required>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="form-group col-10">
-              <label for="del-time-input">Time</label>
-              <input class="form-control" type="time" value="10:00:00" id="del-time-input" required>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-success js-delivery-continue-btn">Continue</button>
-        </form>
-      </div>
-    </div>
-
-
-    <!-- Review Order -->
-    <div class="container bg-light mt-4 py-4 d-none js-review-div">
-      <div class="row mx-4"">
+  <!-- Review Order -->
+  <div class="container bg-light mt-4 py-4 d-none js-review-div">
+    <div class="row mx-4">
         <h2>Review Your Order</h2>
-        <div class="container bg-light cart-content-container js-review-content-div"></div>
+        <div class=" container bg-light cart-content-container js-review-content-div"></div>
+  </div>
+  <div class="row js-review-total mx-3"></div>
+  <div class="row justify-content-end">
+    <button type="button" class="btn btn-success mr-4 js-review-continue-btn">Submit Order
+    </button>
+  </div>
+  </div>
+
+    <!-- Order Complete -->
+    <div class="container bg-light mt-4 py-4 d-none js-complete-div">
+      <div class="row mx-4 justify-content-center">
+        <div class="col-lg-10 col-12 text-center py-4 custom-background">
+          <h2 class="display-4">Order Submitted</h2>
+        </div>
+        <!-- <div class="col-lg-4 col-6">
+          <button type="button" class="btn btn-success mr-4 js-review-continue-btn">Return Home
+          </button>
+        </div> -->
       </div>
-      <div class="row js-review-total mx-3"></div>
-      <div class="row justify-content-end">
-            <button
-            type="button"
-            class="btn btn-success mr-4 js-review-continue-btn"
-            >Submit Order
-            </button>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-6 text-center py-4">
+          <button type="button" class="btn btn-dark mr-4 px-5 js-complete-exit-btn">Exit
+          </button>
+        </div>
       </div>
     </div>
 
-    
 
 
 
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script type="text/javascript" src="data/products.js"></script>
-    <script type="text/javascript" src="JS/generate-order-screen.js"></script>
-    <script type="text/javascript" src="JS/index.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="data/products.js"></script>
+  <script type="text/javascript" src="JS/generate-order-screen.js"></script>
+  <script type="text/javascript" src="JS/index.js"></script>
+</body>
+
 </html>

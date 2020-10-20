@@ -11,8 +11,8 @@ const cartTotalDiv = document.querySelector(".js-cart-total");
 const reviewDiv = document.querySelector(".js-review-div");
 const reviewContentDiv = document.querySelector(".js-review-content-div");
 const reviewTotalDiv = document.querySelector(".js-review-total");
-
-
+const orderCompleteDiv = document.querySelector(".js-complete-div");
+const homeDiv = document.querySelector(".js-home-div");
 
 
 //---Btn
@@ -22,7 +22,7 @@ const optionContinueBtn = document.querySelector(".js-option-continue-btn");
 const pickupContinueBtn = document.querySelector(".js-pickup-continue-btn");
 const deliveryContinueBtn = document.querySelector(".js-delivery-continue-btn");
 const reviewContinueBtn = document.querySelector(".js-review-continue-btn");
-
+const completeExitBtn = document.querySelector(".js-complete-exit-btn");
 
 
 // FUNCTIONS **************************************************************
@@ -191,6 +191,11 @@ const editCart = (event) => {
 //EVENT LISTENERS*************************************************************
 
 
+loadMenuBtn.addEventListener("click", () => {
+    hideDiv(homeDiv);
+    generateContent();
+
+});
 
 orderScreen.addEventListener("click", addToCart);
 
@@ -242,6 +247,15 @@ deliveryContinueBtn.addEventListener("click", (event) => {
     showDiv(reviewDiv);
 })
 
+reviewContinueBtn.addEventListener("click", () => {
+    hideDiv(reviewDiv);
+    showDiv(orderCompleteDiv);  
+})
+
+completeExitBtn.addEventListener("click", () => {
+    hideDiv(orderCompleteDiv);
+    showDiv(homeDiv); 
+})
 
 
 

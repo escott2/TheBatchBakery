@@ -82,6 +82,11 @@ nav .btn {
     background-color: #E5E3E3;
 }
 
+.custom-col-selling {
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 768px) {
 
     .custom-height {

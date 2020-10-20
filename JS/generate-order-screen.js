@@ -69,6 +69,11 @@ const generateContent = () => {
 
 //EVENT LISTENERS*********************************************************************************
 
-// window.addEventListener('load', generateContent);
-loadMenuBtn.addEventListener("click", generateContent);
+// // window.addEventListener('load', generateContent);
+// loadMenuBtn.addEventListener("click", () => {
+//   generateContent();
+
+
+
+// });
 

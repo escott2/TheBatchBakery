@@ -193,6 +193,7 @@ const editCart = (event) => {
 
 loadMenuBtn.addEventListener("click", () => {
     hideDiv(homeDiv);
+    showDiv(menuDiv);
     generateContent();
 
 });

@@ -10,7 +10,7 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <link rel="stylesheet" href="custom.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
   <!-- <script type="text/javascript" src="data/products.js"></script>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <div class="container-fluid mt-4">
+  <div class="container mt-4">
     <div class="row justify-content-start-sm justify-content-center-xs">
       <header>
         <div class="d-sm-flex justify-content-start align-items-center">
@@ -85,28 +85,33 @@
   <!-- Home -->
 
   <div class="container-sm mt-5-lg mt-3 px-4 js-home-div">
-
     <div class="row mt-4 justify-content-center no-gutters d-flex align-items-stretch">
-      <div class="col-lg-6 col-md-8 px-4 py-4 custom-background order-md-1 order-12 d-flex flex-column justify-content-center">
+      <div
+        class="col-lg-6 col-md-8 px-4 py-4 custom-background order-md-1 order-12 d-flex flex-column justify-content-center">
         <h2 class="text-center">Selling Batches Since 1962</h2>
-        <p>With over 50 years of experience, we know how to make a donut. But that's not all we do! Our award winning
-          donuts are sold alongside artisan bread and delicate pastries. We also take a lot of pride in our batch
-          coffee.</p>
+        <p>
+          With over 50 years of experience, we know how to make a donut. But
+          that's not all we do! Our award winning donuts are sold alongside
+          artisan bread and delicate pastries. We also take a lot of pride in
+          our batch coffee.
+        </p>
       </div>
 
       <div class="col-lg-3 col-md-4 pl-md-3 order-md-12 order-1 custom-height">
-        <img src="img/coffee-pastry.jpg" class="coffee-pastry-img">
+        <img src="img/coffee-pastry.jpg" class="coffee-pastry-img" />
       </div>
     </div>
 
     <div class="row mt-4 justify-content-end no-gutters">
       <div class="col-lg-3 col-md-4 col-3 pr-3">
-        <img src="img/batch-bundle.jpg" class="batch-bundle-img">
+        <img src="img/batch-bundle.jpg" class="batch-bundle-img" />
       </div>
       <div class="col-lg-6 col-md-8 col-9 px-3 py-4 custom-background text-center">
         <h2>Batch Bundles</h2>
-        <p>Not sure what to order? Try a batch bundle! With curated combos that let your explore a variety of items on
-          our menu.</p>
+        <p>
+          Not sure what to order? Try a batch bundle! With curated combos that
+          let your explore a variety of items on our menu.
+        </p>
       </div>
     </div>
 
@@ -120,25 +125,28 @@
      -->
 
     <div class="row mt-4 justify-content-end no-gutters">
-
       <div class="col-lg-9 custom-background py-4 text-center">
         <h2>Come on Over or We'll Come to You</h2>
         <p>Introducing pickup and delivery!</p>
       </div>
-
     </div>
 
-    <div class="row mt-4 justify-content-center">
-      <div class="col-lg-4 py-4 text-center">
-        <h2>Ready to Order?</h2>
-        <div class="round-div rounded-circle custom-background d-flex align-items-center mx-auto">
-          <button class="btn round-btn rounded-circle bg-dark text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu">
-            View Menu
+    <div class="row mt-4 justify-content-center no-gutters d-flex align-items-stretch">
+      <div
+        class="col-lg-9 col-md-12 pb-4 bg-white custom-border--gray order-md-1 order-12 d-flex flex-column justify-content-center">
+        <h2 class="text-center mb-4 py-4 custom-background">Ready to Order?</h2>
+        <div class="round-div rounded-circle donut-background d-flex align-items-center mx-auto">
+          <button
+            class="btn round-btn rounded-circle custom-bg--brown text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu">
+            Start Order
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- <div class="col-lg-4 py-4 text-center">
+
+
+    <!-- <div class="col-lg-4 py-4 text-center">
           <h2>Ready to Order?</h2>
           <div class="round-div rounded-circle custom-background d-flex align-items-center mx-auto">
             <button
@@ -159,7 +167,7 @@
           </button>
          </div>
         </div> -->
-    </div>
+
     <!-- <div class="row">
         <button
           class="btn round-btn rounded-circle bg-dark text-white my-2 mx-auto my-sm-0 lato--bold js-load-menu"
@@ -170,7 +178,7 @@
   </div>
 
   <!-- MENU -->
-  <div class="container bg-light mt-4 py-4 js-menu-div">
+  <div class="container bg-light mt-4 py-4 js-menu-div d-none">
     <!-- <div class="row">
         <button
           class="btn bg-dark text-white px-4 my-2 mx-auto my-sm-0 lato--bold js-load-menu"
@@ -187,20 +195,20 @@
     </div>
   </div>
 
-
   <!-- Cart -->
   <div class="container bg-light mt-4 py-4 d-none js-cart-div">
     <div class="row mx-4"">
         <h2>Cart</h2>
-        <div class=" container bg-light cart-content-container js-cart-content"></div>
+        <div
+          class=" container bg-light cart-content-container js-cart-content"></div>
   </div>
   <div class="row js-cart-total mx-3"></div>
   <div class="row justify-content-end">
-    <button type="button" class="btn btn-success mr-4 js-cart-continue-btn">Continue
+    <button type="button" class="btn btn-success mr-4 js-cart-continue-btn">
+      Continue
     </button>
   </div>
   </div>
-
 
   <!-- Options -->
   <div class="container bg-light mt-4 py-4 d-none js-option-div">
@@ -220,12 +228,12 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-success js-option-continue-btn">Continue</button>
+        <button type="submit" class="btn btn-success js-option-continue-btn">
+          Continue
+        </button>
       </form>
     </div>
   </div>
-
-
 
   <!-- Pickup Customer Info -->
   <div class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
@@ -251,32 +259,33 @@
         </div>
 
         <div class="form-row">
-          <div class=" form-group col">
+          <div class="form-group col">
             <label for="pickup-tel-input">Telephone</label>
             <input class="form-control" type="tel" id="pickup-tel-input" placeholder="555-555-5555"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input" required>
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="tel-input" required />
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col">
             <label for="pickup-date-input">Date</label>
-            <input class="form-control" type="date" value="2020-10-01" id="pickup-date-input" required>
+            <input class="form-control" type="date" value="2020-10-01" id="pickup-date-input" required />
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-10">
             <label for="pickup-time-input">Time</label>
-            <input class="form-control" type="time" value="10:00:00" id="pickup-time-input" required>
+            <input class="form-control" type="time" value="10:00:00" id="pickup-time-input" required />
           </div>
         </div>
 
-        <button type="submit" class="btn btn-success js-pickup-continue-btn">Continue</button>
+        <button type="submit" class="btn btn-success js-pickup-continue-btn">
+          Continue
+        </button>
       </form>
     </div>
   </div>
-
 
   <!-- Delivery Customer Info -->
   <div class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
@@ -327,71 +336,74 @@
         </div>
 
         <div class="form-row">
-          <div class=" form-group col">
+          <div class="form-group col">
             <label for="del-tel-input">Telephone</label>
             <input class="form-control" type="tel" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              id="del-tel-input" required>
+              id="del-tel-input" required />
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col">
             <label for="del-date-input">Date</label>
-            <input class="form-control" type="date" value="2020-10-01" id="del-date-input" required>
+            <input class="form-control" type="date" value="2020-10-01" id="del-date-input" required />
           </div>
         </div>
 
         <div class="row">
           <div class="form-group col-10">
             <label for="del-time-input">Time</label>
-            <input class="form-control" type="time" value="10:00:00" id="del-time-input" required>
+            <input class="form-control" type="time" value="10:00:00" id="del-time-input" required />
           </div>
         </div>
-        <button type="submit" class="btn btn-success js-delivery-continue-btn">Continue</button>
+        <button type="submit" class="btn btn-success js-delivery-continue-btn">
+          Continue
+        </button>
       </form>
     </div>
   </div>
 
-
   <!-- Review Order -->
   <div class="container bg-light mt-4 py-4 d-none js-review-div">
     <div class="row mx-4">
-        <h2>Review Your Order</h2>
-        <div class=" container bg-light cart-content-container js-review-content-div"></div>
-  </div>
-  <div class="row js-review-total mx-3"></div>
-  <div class="row justify-content-end">
-    <button type="button" class="btn btn-success mr-4 js-review-continue-btn">Submit Order
-    </button>
-  </div>
+      <h2>Review Your Order</h2>
+      <div class="container bg-light cart-content-container js-review-content-div"></div>
+    </div>
+    <div class="row js-review-total mx-3"></div>
+    <div class="row justify-content-end">
+      <button type="button" class="btn btn-success mr-4 js-review-continue-btn">
+        Submit Order
+      </button>
+    </div>
   </div>
 
-    <!-- Order Complete -->
-    <div class="container bg-light mt-4 py-4 d-none js-complete-div">
-      <div class="row mx-4 justify-content-center">
-        <div class="col-lg-10 col-12 text-center py-4 custom-background">
-          <h2 class="display-4">Order Submitted</h2>
-        </div>
-        <!-- <div class="col-lg-4 col-6">
+  <!-- Order Complete -->
+  <div class="container bg-light mt-4 py-4 d-none js-complete-div">
+    <div class="row mx-4 justify-content-center">
+      <div class="col-lg-10 col-12 text-center py-4 custom-background">
+        <h2 class="display-4">Order Submitted</h2>
+      </div>
+      <!-- <div class="col-lg-4 col-6">
           <button type="button" class="btn btn-success mr-4 js-review-continue-btn">Return Home
           </button>
         </div> -->
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-6 text-center py-4">
-          <button type="button" class="btn btn-dark mr-4 px-5 js-complete-exit-btn">Exit
-          </button>
-        </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-6 text-center py-4">
+        <button type="button" class="btn btn-dark mr-4 px-5 js-complete-exit-btn">
+          Exit
+        </button>
       </div>
     </div>
+  </div>
 
-
-
-
-
-
-
-
+<div class="container-fluid custom-bg--brown mt-4 py-5">
+  <div class="row">
+    <div class="col-12">
+      <p>Copyright 2020</p>
+    </div>
+  </div>
+</div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 

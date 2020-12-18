@@ -2,7 +2,9 @@
 tan:  #F3E9DA
 brown:  #5E423D */
 
-
+/* * {
+    box-sizing: border-box;
+} */
 
 header .display-4 {
     font-family: 'Lato', sans-serif;
@@ -80,6 +82,36 @@ nav .btn {
 
 .custom-background {
     background-color: #E5E3E3;
+}
+
+.custom-border--gray {
+    border: 0.75em solid #E5E3E3;
+
+}
+
+.custom-bg--orange {
+    background-color: #D98236;
+}
+
+.custom-bg--light-cream {
+    background-color: #FDFAEE;
+}
+
+.custom-bg--dark-cream {
+    background-color: #EDE0C6;
+}
+
+.custom-bg--brown {
+    background-color: #2D1E1A;
+}
+
+.custom-border--orange {
+    border: 0.5em solid #D98236;
+}
+
+.donut-background {
+    background-image: url("img/sprinkle.svg");
+
 }
 
 .custom-col-selling {

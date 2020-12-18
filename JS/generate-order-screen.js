@@ -4,9 +4,6 @@ const loadMenuBtn = document.querySelector(".js-load-menu");
 const orderScreen = document.querySelector(".js-order-screen");
 let html = "";
 
-
-
-
 //CALLBACK FUNCTIONS**************************************************************
 
 //EDIT NEEDED: Add parameters for all variables accessed outside this function...

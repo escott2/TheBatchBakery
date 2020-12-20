@@ -127,7 +127,6 @@ nav .btn {
 
     .batch-bundle-img {
         width: 310px;
-        height: auto;
     }
 
 }
@@ -155,4 +154,22 @@ nav .btn {
         background-color:  #F3E9DA;
     }
 
+    .round-btn {
+        width: 125px;
+        height: 125px;
+    }
+
+    .round-div {
+        width: 280px;
+        height: 280px; 
+    }
+
+}
+
+@media (max-width: 370px) {
+
+    .round-div {
+        width: 240px;
+        height: 240px;
+    }
 }

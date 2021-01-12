@@ -54,10 +54,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto custom-font--jaldi">
             <li class="nav-item active mr-4">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+              <button class="nav-link js-home-nav">Home<span class="sr-only">(current)</span></button>
+
             </li>
             <li class="nav-item mr-4">
-              <a class="nav-link" href="#">Menu</a>
+              <!-- <a class="nav-link" href="#">Order</a> -->
+              <button class="nav-link js-order-nav">Order</button>
             </li>
             <li class="nav-item mr-4">
               <a class="nav-link" href="#">Cart</a>
@@ -84,7 +87,7 @@
 
   <!-- Home -->
 
-  <div class="container-sm mt-5-lg mt-3 px-4 js-home-div">
+  <section class="container-sm mt-5-lg mt-3 px-4 js-home-div current-div">
     <div class="row mt-4 justify-content-center no-gutters d-flex align-items-stretch">
       <div
         class="col-lg-6 col-md-8 px-4 py-4 custom-background order-md-1 order-12 d-flex flex-column justify-content-center">
@@ -175,10 +178,10 @@
           View Menu
         </button>
       </div> -->
-  </div>
+    </section>
 
   <!-- MENU -->
-  <div class="container bg-light mt-4 py-4 js-menu-div d-none">
+  <section class="container bg-light mt-4 py-4 js-menu-div">
     <!-- <div class="row">
         <button
           class="btn bg-dark text-white px-4 my-2 mx-auto my-sm-0 lato--bold js-load-menu"
@@ -193,10 +196,10 @@
         Continue
       </button>
     </div>
-  </div>
+  </section>
 
   <!-- Cart -->
-  <div class="container bg-light mt-4 py-4 d-none js-cart-div">
+  <section class="container bg-light mt-4 py-4 js-cart-div">
     <div class="row mx-4"">
         <h2>Cart</h2>
         <div
@@ -208,10 +211,10 @@
       Continue
     </button>
   </div>
-  </div>
+  </section>
 
   <!-- Options -->
-  <div class="container bg-light mt-4 py-4 d-none js-option-div">
+  <section class="container bg-light mt-4 py-4 d-none js-option-div">
     <div class="row">
       <form class="mx-4">
         <h2>Order Options</h2>
@@ -233,10 +236,10 @@
         </button>
       </form>
     </div>
-  </div>
+  </section>
 
   <!-- Pickup Customer Info -->
-  <div class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
+  <section class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
     <div class="row js-customer-form">
       <form class="mx-4">
         <h2>Pickup Information</h2>
@@ -285,10 +288,10 @@
         </button>
       </form>
     </div>
-  </div>
+  </section>
 
   <!-- Delivery Customer Info -->
-  <div class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
+  <section class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
     <div class="row js-customer-form">
       <form class="mx-4">
         <h2>Delivery Information</h2>
@@ -361,10 +364,10 @@
         </button>
       </form>
     </div>
-  </div>
+  </section>
 
   <!-- Review Order -->
-  <div class="container bg-light mt-4 py-4 d-none js-review-div">
+  <section class="container bg-light mt-4 py-4 d-none js-review-div">
     <div class="row mx-4">
       <h2>Review Your Order</h2>
       <div class="container bg-light cart-content-container js-review-content-div"></div>
@@ -375,10 +378,10 @@
         Submit Order
       </button>
     </div>
-  </div>
+  </section>
 
   <!-- Order Complete -->
-  <div class="container bg-light mt-4 py-4 d-none js-complete-div">
+  <section class="container bg-light mt-4 py-4 d-none js-complete-div">
     <div class="row mx-4 justify-content-center">
       <div class="col-lg-10 col-12 text-center py-4 custom-background">
         <h2 class="display-4">Order Submitted</h2>
@@ -395,7 +398,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </section>
 
 <div class="container-fluid custom-bg--brown mt-4 py-5">
   <div class="row">

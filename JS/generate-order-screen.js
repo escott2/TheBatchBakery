@@ -56,7 +56,7 @@ const generateContent = () => {
 
     }
 
-    loadMenuBtn.classList.add("d-none");
+    // loadMenuBtn.classList.add("d-none");
 
     orderScreen.innerHTML = html;
 

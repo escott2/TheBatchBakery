@@ -1,4 +1,7 @@
 // DECLARING VARIABLES********************
+// let currentDiv = document.querySelector(".current-div");
+
+
 //---Div
 const orderTotalDiv = document.querySelector(".js-order-screen-total");
 const menuDiv = document.querySelector(".js-menu-div");
@@ -16,6 +19,9 @@ const homeDiv = document.querySelector(".js-home-div");
 
 
 //---Btn
+const orderNav = document.querySelector(".js-order-nav");
+const homeNav = document.querySelector(".js-home-nav");
+
 const menuContinueBtn = document.querySelector(".js-menu-continue-btn");
 const cartContinueBtn = document.querySelector(".js-cart-continue-btn");
 const optionContinueBtn = document.querySelector(".js-option-continue-btn");
@@ -23,6 +29,9 @@ const pickupContinueBtn = document.querySelector(".js-pickup-continue-btn");
 const deliveryContinueBtn = document.querySelector(".js-delivery-continue-btn");
 const reviewContinueBtn = document.querySelector(".js-review-continue-btn");
 const completeExitBtn = document.querySelector(".js-complete-exit-btn");
+
+
+generateContent();
 
 
 // FUNCTIONS **************************************************************
@@ -46,7 +55,6 @@ function addProduct (array, buttonId) {
 
     }
 
-
 /**
  * Returns parent div with unique class name, matching button's ID. 
  * @param {string} ...
@@ -68,6 +76,8 @@ function findProductObject(array, productValue) {
         }
     }
 }
+
+
 
 /**
  * Sets quantity value in object.
@@ -109,6 +119,47 @@ function generateOrderTotal(array, displayDiv) {
     displayDiv.innerHTML = totalHtml;
 
 }
+
+
+
+function hideDiv(divToHide) {
+    divToHide.classList.add("d-none");
+}
+
+function showDiv(divtoShow) {
+    divtoShow.classList.remove("d-none");
+}
+
+function generateCartContent(array, showCartContentDiv) {
+
+    let cartHtml = "";
+    
+    for (let i = 0; i < array.length; i++) {
+    //if qty != 0, display object ["name"]["price"]["quantity"]
+        if (donutObjects[i]["quantity"] > 0) {
+
+        cartHtml += `
+                <div class="row mt-3">
+                    <div class="col-md-4 col-8">
+                    <p>${donutObjects[i]["name"]}</p>
+                    </div>
+                    <div class="col-md-3 col-2">
+                    <p>${donutObjects[i]["price"]}</p>
+                    </div>
+                    <div class="col-md-3 col-2">
+                    <p>${donutObjects[i]["quantity"]}</p>
+                    </div>
+                </div>
+                
+                `
+            }
+
+        }
+
+    showCartContentDiv.innerHTML = cartHtml;
+}
+
+
 
 
 
@@ -190,14 +241,51 @@ const editCart = (event) => {
 
 //EVENT LISTENERS*************************************************************
 
+function displayContent(targetDiv) {
+    let currentDiv = document.querySelector(".current-div");
 
-loadMenuBtn.addEventListener("click", () => {
-    hideDiv(homeDiv);
-    showDiv(menuDiv);
-    generateContent();
+    currentDiv.classList.remove("current-div");
+    targetDiv.classList.add("current-div");
+}
 
+//START HOME PAGE EVENTS
+
+//---Navigation---
+
+homeNav.addEventListener("click", () => {
+
+    displayContent(homeDiv);
+
+    // let currentDiv = document.querySelector(".current-div");
+
+    // currentDiv.classList.remove("current-div");
+    // homeDiv.classList.add("current-div");
+})
+
+orderNav.addEventListener("click", () => {
+    displayContent(menuDiv);
+
+
+    // hideDiv(homeDiv);
+    // showDiv(menuDiv);
 });
 
+
+//Cart
+
+//HOME PAGE EVENTS
+
+//To Order Screen
+loadMenuBtn.addEventListener("click", () => {
+    let currentDiv = document.querySelector(".current-div");
+
+    currentDiv.classList.remove("current-div");
+    menuDiv.classList.add("current-div");
+});
+
+//ORDER SCREEN
+
+//
 orderScreen.addEventListener("click", addToCart);
 
 //REFACTOR
@@ -206,9 +294,14 @@ orderScreen.addEventListener("click", editCart);
 //Start continue button event listeners
 
 menuContinueBtn.addEventListener("click", () => {
+    let currentDiv = document.querySelector(".current-div");
+
     generateCartContent(donutObjects, cartContentDiv);
-    hideDiv(menuDiv);
-    showDiv(cartDiv);
+    console.log(currentDiv);
+    currentDiv.classList.remove("current-div");
+    cartDiv.classList.add("current-div");
+    // hideDiv(menuDiv);
+    // showDiv(cartDiv);
     generateOrderTotal(donutObjects, cartTotalDiv);
 });
 
@@ -266,42 +359,42 @@ completeExitBtn.addEventListener("click", () => {
 
 
 
-//move up to function area
+// //move up to function area
 
-function hideDiv(divToHide) {
-    divToHide.classList.add("d-none");
-}
+// function hideDiv(divToHide) {
+//     divToHide.classList.add("d-none");
+// }
 
-function showDiv(divtoShow) {
-    divtoShow.classList.remove("d-none");
-}
+// function showDiv(divtoShow) {
+//     divtoShow.classList.remove("d-none");
+// }
 
-function generateCartContent(array, showCartContentDiv) {
+// function generateCartContent(array, showCartContentDiv) {
 
-    let cartHtml = "";
+//     let cartHtml = "";
     
-    for (let i = 0; i < array.length; i++) {
-    //if qty != 0, display object ["name"]["price"]["quantity"]
-        if (donutObjects[i]["quantity"] > 0) {
+//     for (let i = 0; i < array.length; i++) {
+//     //if qty != 0, display object ["name"]["price"]["quantity"]
+//         if (donutObjects[i]["quantity"] > 0) {
 
-        cartHtml += `
-                <div class="row mt-3">
-                    <div class="col-md-4 col-8">
-                    <p>${donutObjects[i]["name"]}</p>
-                    </div>
-                    <div class="col-md-3 col-2">
-                    <p>${donutObjects[i]["price"]}</p>
-                    </div>
-                    <div class="col-md-3 col-2">
-                    <p>${donutObjects[i]["quantity"]}</p>
-                    </div>
-                </div>
+//         cartHtml += `
+//                 <div class="row mt-3">
+//                     <div class="col-md-4 col-8">
+//                     <p>${donutObjects[i]["name"]}</p>
+//                     </div>
+//                     <div class="col-md-3 col-2">
+//                     <p>${donutObjects[i]["price"]}</p>
+//                     </div>
+//                     <div class="col-md-3 col-2">
+//                     <p>${donutObjects[i]["quantity"]}</p>
+//                     </div>
+//                 </div>
                 
-                `
-            }
+//                 `
+//             }
 
-        }
+//         }
 
-    showCartContentDiv.innerHTML = cartHtml;
-}
+//     showCartContentDiv.innerHTML = cartHtml;
+// }
 

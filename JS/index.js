@@ -215,8 +215,49 @@ const editCart = (event) => {
     }   
 }
 
+const addQty = (event) => {
+    const addBtn = event.target;
+    if (addBtn.classList.contains("js-add-btn")) {
+        const product = event.target.parentNode.parentNode.parentNode.parentNode;
+        const minusBtn = product.querySelector(".js-minus-btn");
+        const productQtyInput = product.querySelector(".display-qty");
+        let value = productQtyInput.value;
+        let newValue = Number(value);
+        newValue++;
+        productQtyInput.value = newValue;
+
+        if (newValue > 0) {
+            minusBtn.removeAttribute("disabled");
+        }
+
+        event.preventDefault();
+    }
+}
+
+const decreaseQty = (event) => {
+    const minusBtn = event.target;
+    if (minusBtn.classList.contains("js-minus-btn")) {
+        const product = event.target.parentNode.parentNode.parentNode.parentNode;
+        const productQtyInput = product.querySelector(".display-qty");
+        let value = productQtyInput.value;
+        let newValue = Number(value);
+        newValue--;
+        productQtyInput.value = newValue;
+
+        if (newValue < 1) {
+            minusBtn.setAttribute("disabled", "");
+        }
+
+        event.preventDefault();
+    }
+}
+
+
+
 
 //EVENT LISTENERS*************************************************************
+
+
 
 //START HOME PAGE EVENTS
 
@@ -243,7 +284,9 @@ loadMenuBtn.addEventListener("click", () => {
 
 //START ORDER SCREEN EVENTS
 
-orderScreen.addEventListener("click", addToCart);
+orderScreen.addEventListener("click", addQty);
+
+orderScreen.addEventListener("click", decreaseQty);
 
 orderScreen.addEventListener("click", editCart);
 

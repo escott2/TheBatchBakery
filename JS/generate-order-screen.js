@@ -2,12 +2,15 @@ var obj = JSON.parse(product);
 const donutObjects = obj.donuts;
 const loadMenuBtn = document.querySelector(".js-load-menu");
 const orderScreen = document.querySelector(".js-order-screen");
-let html = "";
+// let html = "";
 
 //CALLBACK FUNCTIONS**************************************************************
 
 //EDIT NEEDED: Add parameters for all variables accessed outside this function...
 const generateContent = () => {
+    let html = "";
+
+  
 
     for (let i = 0; i < donutObjects.length; i++) {
         html += `
@@ -44,7 +47,7 @@ const generateContent = () => {
                         <option value="9">9</option>
                         <option value="10">10</option>
                       </select>
-                      <button type="button" class="btn btn-dark mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add to Cart</button>
+                      <button type="button" class="btn btn-dark mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add</button>
                       <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
 
                     </div>
@@ -56,7 +59,7 @@ const generateContent = () => {
 
     }
 
-    loadMenuBtn.classList.add("d-none");
+    // loadMenuBtn.classList.add("d-none");
 
     orderScreen.innerHTML = html;
 

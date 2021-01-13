@@ -1,6 +1,4 @@
 // DECLARING VARIABLES********************
-// let currentDiv = document.querySelector(".current-div");
-
 
 //---Div
 const orderTotalDiv = document.querySelector(".js-order-screen-total");
@@ -19,8 +17,9 @@ const homeDiv = document.querySelector(".js-home-div");
 
 
 //---Btn
-const orderNav = document.querySelector(".js-order-nav");
 const homeNav = document.querySelector(".js-home-nav");
+const orderNav = document.querySelector(".js-order-nav");
+const cartNav = document.querySelector(".js-cart-nav");
 
 const menuContinueBtn = document.querySelector(".js-menu-continue-btn");
 const cartContinueBtn = document.querySelector(".js-cart-continue-btn");
@@ -30,11 +29,21 @@ const deliveryContinueBtn = document.querySelector(".js-delivery-continue-btn");
 const reviewContinueBtn = document.querySelector(".js-review-continue-btn");
 const completeExitBtn = document.querySelector(".js-complete-exit-btn");
 
+//---Form
+const pickupForm = document.querySelector(".js-pickup-form");
+const deliveryForm = document.querySelector(".js-delivery-form");
+
 
 generateContent();
 
 
 // FUNCTIONS **************************************************************
+function displayContent(targetDiv) {
+    let currentDiv = document.querySelector(".current-div");
+
+    currentDiv.classList.remove("current-div");
+    targetDiv.classList.add("current-div");
+}
 
 function addProduct (array, buttonId) {
 
@@ -46,14 +55,18 @@ function addProduct (array, buttonId) {
     const addToCartBtn = productContainer.querySelector(".js-add-to-cart");
     const editBtn = productContainer.querySelector(".js-edit-btn");
 
-    setQty(qtyInputValue, productObject);
-
-    //toggleButtons(addToCartBtn, editBtn);
-    addToCartBtn.classList.add("d-none");
-    editBtn.classList.remove("d-none");
-    qtySelector.setAttribute("disabled", "")
-
+    const validQuantity = setQty(qtyInputValue, productObject);
+    
+    //NEED TO ADJUST --- Continue button should appear only if there is a total product quantity greater than 0. Must be able to change quantity to 0, to enable proper cart editing.
+    if (validQuantity) {
+        addToCartBtn.classList.add("d-none");
+        editBtn.classList.remove("d-none");
+        qtySelector.setAttribute("disabled", "")
+        return true;
+    } else {
+        return false;
     }
+}
 
 /**
  * Returns parent div with unique class name, matching button's ID. 
@@ -77,8 +90,6 @@ function findProductObject(array, productValue) {
     }
 }
 
-
-
 /**
  * Sets quantity value in object.
  * @param {} ...
@@ -86,7 +97,12 @@ function findProductObject(array, productValue) {
  * 
  */
 function setQty(qtyInputValue, productObject) {
-    productObject.quantity = qtyInputValue;
+    if (qtyInputValue > 0) {
+        productObject.quantity = qtyInputValue;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -120,16 +136,6 @@ function generateOrderTotal(array, displayDiv) {
 
 }
 
-
-
-function hideDiv(divToHide) {
-    divToHide.classList.add("d-none");
-}
-
-function showDiv(divtoShow) {
-    divtoShow.classList.remove("d-none");
-}
-
 function generateCartContent(array, showCartContentDiv) {
 
     let cartHtml = "";
@@ -159,14 +165,11 @@ function generateCartContent(array, showCartContentDiv) {
     showCartContentDiv.innerHTML = cartHtml;
 }
 
-
-
-
-
+function clearCart() {
+    donutObjects.forEach (product => {product.quantity = 0});
+}
 
 // CALLBACK FUNCTIONS **************************************************************
-
-//EDIT - Self contain. Imagine using this for other array of objects. How can I change this so it's reusable.
 
 const addToCart = (event) => {
 
@@ -178,41 +181,17 @@ const addToCart = (event) => {
         const buttonId = addToCartBtn.id;
 
         //Higher Order Function -- parameters will quickly fill in parameters below...)
+        const isValid = addProduct(donutObjects, buttonId);
 
-        addProduct(donutObjects, buttonId);
-        generateOrderTotal(donutObjects, orderTotalDiv);
-        menuContinueBtn.classList.remove("d-none");
+        if (isValid) {
+            generateOrderTotal(donutObjects, orderTotalDiv);
+            menuContinueBtn.classList.remove("d-none");
+        }
+
+    }
         
         event.preventDefault();
-
-
-        // function addProdutTest (array) {
-
-        // const buttonId = addToCartBtn.id;
-        // const productContainer = findProductContainer(buttonId);
-        // const qtySelector = productContainer.querySelector(".js-product-quantity");
-        // const qtyInputValue = Number(productContainer.querySelector(".js-product-quantity").value);
-        // //EDIT NEEDED, this one is accessing donutObjects... figure another way to access, return this array maybe. 
-        // const productObject = findProductObject(donutObjects, buttonId);
-        // const editBtn = productContainer.querySelector(".js-edit-btn");
-
-        // setQty(qtyInputValue, productObject);
-
-        // //Update Order Total --- EDIT NEEDED, Outside variable
-        // orderTotalDiv.innerHTML = orderTotal(donutObjects);
-
-        // //Toggle Buttons
-        // addToCartBtn.classList.add("d-none");
-        // editBtn.classList.remove("d-none");
-
-        // qtySelector.setAttribute("disabled", "")
-
-        // console.log(donutObjects);
-
-        // event.preventDefault();
-
-        // }
-    }
+    
 }
 
 
@@ -221,8 +200,6 @@ const editCart = (event) => {
     const editBtn = event.target;
 
     if (editBtn.classList.contains("js-edit-btn")) {
-
-
 
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const addToCartBtn = product.querySelector(".js-add-to-cart");
@@ -241,160 +218,106 @@ const editCart = (event) => {
 
 //EVENT LISTENERS*************************************************************
 
-function displayContent(targetDiv) {
-    let currentDiv = document.querySelector(".current-div");
-
-    currentDiv.classList.remove("current-div");
-    targetDiv.classList.add("current-div");
-}
-
 //START HOME PAGE EVENTS
 
 //---Navigation---
 
 homeNav.addEventListener("click", () => {
-
     displayContent(homeDiv);
-
-    // let currentDiv = document.querySelector(".current-div");
-
-    // currentDiv.classList.remove("current-div");
-    // homeDiv.classList.add("current-div");
 })
 
 orderNav.addEventListener("click", () => {
     displayContent(menuDiv);
-
-
-    // hideDiv(homeDiv);
-    // showDiv(menuDiv);
 });
 
+cartNav.addEventListener("click", () => {
+    displayContent(cartDiv);
+});
 
-//Cart
-
-//HOME PAGE EVENTS
-
-//To Order Screen
+//---Btn to Order Screen
 loadMenuBtn.addEventListener("click", () => {
-    let currentDiv = document.querySelector(".current-div");
-
-    currentDiv.classList.remove("current-div");
-    menuDiv.classList.add("current-div");
+    displayContent(menuDiv);
 });
 
-//ORDER SCREEN
+//END HOME PAGE EVENTS
 
-//
+//START ORDER SCREEN EVENTS
+
 orderScreen.addEventListener("click", addToCart);
 
-//REFACTOR
 orderScreen.addEventListener("click", editCart);
 
-//Start continue button event listeners
-
+//---Btn to Cart Screen
 menuContinueBtn.addEventListener("click", () => {
-    let currentDiv = document.querySelector(".current-div");
+    displayContent(cartDiv);
 
     generateCartContent(donutObjects, cartContentDiv);
-    console.log(currentDiv);
-    currentDiv.classList.remove("current-div");
-    cartDiv.classList.add("current-div");
-    // hideDiv(menuDiv);
-    // showDiv(cartDiv);
     generateOrderTotal(donutObjects, cartTotalDiv);
 });
+//END ORDER SCREEN EVENTS
 
+//---Btn to Option Screen
 cartContinueBtn.addEventListener("click", () => {
-    hideDiv(cartDiv);
-    showDiv(optionDiv);  
+    displayContent(optionDiv);
 });
 
+//---Btn to Pickup or Delivery Screens
 optionContinueBtn.addEventListener("click", (event) => {
 
     const radioValue = document.querySelector('input[name="option"]:checked').value;
     event.preventDefault();
 
-    hideDiv(optionDiv);
-
         if (radioValue === "pickup") {
-            showDiv(pickupFormDiv)
+            displayContent(pickupFormDiv);
          }
          else if (radioValue === "delivery") {
-            showDiv (deliveryFormDiv);
+            displayContent(deliveryFormDiv);
          } 
 });
 
+//TO ADD -- Logic if user changes mind, can only choose one.***********************
+
+//---Btn to Review Order Screen, from Pickup Screen
 pickupContinueBtn.addEventListener("click", (event) => {
     event.preventDefault();
     generateCartContent(donutObjects, reviewContentDiv);
     generateOrderTotal(donutObjects, reviewTotalDiv);
-    hideDiv(pickupFormDiv);
-    showDiv(reviewDiv);  
+    displayContent(reviewDiv);
+
 })
 
+//---Btn to Review Order Screen, from Delivery Screen
 deliveryContinueBtn.addEventListener("click", (event) => {
     event.preventDefault();
     generateCartContent(donutObjects, reviewContentDiv);
     generateOrderTotal(donutObjects, reviewTotalDiv);
-    hideDiv(deliveryFormDiv);
-    showDiv(reviewDiv);
+    displayContent(reviewDiv);
 })
 
+//---Btn to complete Order
 reviewContinueBtn.addEventListener("click", () => {
-    hideDiv(reviewDiv);
-    showDiv(orderCompleteDiv);  
+    displayContent(orderCompleteDiv);
 })
 
+//---Btn to exit order
 completeExitBtn.addEventListener("click", () => {
-    hideDiv(orderCompleteDiv);
-    showDiv(homeDiv); 
+    displayContent(homeDiv);
+    resetOrder();
 })
 
+function resetOrder() {
+    orderScreen.innerHTML = "";
+    orderTotalDiv.innerHTML = "";
+    cartContentDiv.innerHTML = "";
+    cartTotalDiv.innerHTML = "";
+    reviewTotalDiv.innerHTML = "";
 
+    clearCart();
+    generateContent();
 
-//End continue button event listeners
+    pickupForm.reset();
+    deliveryForm.reset();
 
+    menuContinueBtn.classList.add("d-none");
 
-
-
-
-// //move up to function area
-
-// function hideDiv(divToHide) {
-//     divToHide.classList.add("d-none");
-// }
-
-// function showDiv(divtoShow) {
-//     divtoShow.classList.remove("d-none");
-// }
-
-// function generateCartContent(array, showCartContentDiv) {
-
-//     let cartHtml = "";
-    
-//     for (let i = 0; i < array.length; i++) {
-//     //if qty != 0, display object ["name"]["price"]["quantity"]
-//         if (donutObjects[i]["quantity"] > 0) {
-
-//         cartHtml += `
-//                 <div class="row mt-3">
-//                     <div class="col-md-4 col-8">
-//                     <p>${donutObjects[i]["name"]}</p>
-//                     </div>
-//                     <div class="col-md-3 col-2">
-//                     <p>${donutObjects[i]["price"]}</p>
-//                     </div>
-//                     <div class="col-md-3 col-2">
-//                     <p>${donutObjects[i]["quantity"]}</p>
-//                     </div>
-//                 </div>
-                
-//                 `
-//             }
-
-//         }
-
-//     showCartContentDiv.innerHTML = cartHtml;
-// }
-
+}

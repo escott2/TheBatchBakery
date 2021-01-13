@@ -63,7 +63,7 @@
               <button class="nav-link js-order-nav">Order</button>
             </li>
             <li class="nav-item mr-4">
-              <a class="nav-link" href="#">Cart</a>
+              <button class="nav-link js-cart-nav">Cart</button>
             </li>
           </ul>
           <!-- <form class="form-inline my-2 my-lg-0">
@@ -193,7 +193,7 @@
     <div class="row border-top border-secondary mt-4 js-order-screen-total"></div>
     <div class="row justify-content-end">
       <button type="button" class="btn btn-success mr-4 d-none js-menu-continue-btn">
-        Continue
+        Add to Cart
       </button>
     </div>
   </section>
@@ -214,7 +214,7 @@
   </section>
 
   <!-- Options -->
-  <section class="container bg-light mt-4 py-4 d-none js-option-div">
+  <section class="container bg-light mt-4 py-4 js-option-div">
     <div class="row">
       <form class="mx-4">
         <h2>Order Options</h2>
@@ -239,9 +239,9 @@
   </section>
 
   <!-- Pickup Customer Info -->
-  <section class="container bg-light mt-4 py-4 d-none js-pickup-form-div">
+  <section class="container bg-light mt-4 py-4 js-pickup-form-div">
     <div class="row js-customer-form">
-      <form class="mx-4">
+      <form class="mx-4 js-pickup-form">
         <h2>Pickup Information</h2>
         <p>Please complete all fields.</p>
         <div class="form-row">
@@ -291,9 +291,9 @@
   </section>
 
   <!-- Delivery Customer Info -->
-  <section class="container bg-light mt-4 py-4 d-none js-delivery-form-div">
+  <section class="container bg-light mt-4 py-4 js-delivery-form-div">
     <div class="row js-customer-form">
-      <form class="mx-4">
+      <form class="mx-4 js-delivery-form">
         <h2>Delivery Information</h2>
         <p>Please complete all fields.</p>
         <div class="form-row">
@@ -367,7 +367,7 @@
   </section>
 
   <!-- Review Order -->
-  <section class="container bg-light mt-4 py-4 d-none js-review-div">
+  <section class="container bg-light mt-4 py-4 js-review-div">
     <div class="row mx-4">
       <h2>Review Your Order</h2>
       <div class="container bg-light cart-content-container js-review-content-div"></div>
@@ -381,7 +381,7 @@
   </section>
 
   <!-- Order Complete -->
-  <section class="container bg-light mt-4 py-4 d-none js-complete-div">
+  <section class="container bg-light mt-4 py-4 js-complete-div">
     <div class="row mx-4 justify-content-center">
       <div class="col-lg-10 col-12 text-center py-4 custom-background">
         <h2 class="display-4">Order Submitted</h2>

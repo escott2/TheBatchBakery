@@ -132,6 +132,11 @@ ul button {
     display: block;
 }
 
+.display-qty {
+    width: 50px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
 
     .custom-height {

@@ -53,19 +53,13 @@ function addProduct (array, buttonId) {
     const qtyInputValue = Number(productContainer.querySelector(".js-product-quantity").value);
     const productObject = findProductObject(array, productId);
     const addToCartBtn = productContainer.querySelector(".js-add-to-cart");
-    const editBtn = productContainer.querySelector(".js-edit-btn");
+    // const editBtn = productContainer.querySelector(".js-edit-btn");
 
-    const validQuantity = setQty(qtyInputValue, productObject);
-    
-    //NEED TO ADJUST --- Continue button should appear only if there is a total product quantity greater than 0. Must be able to change quantity to 0, to enable proper cart editing.
-    if (validQuantity) {
-        addToCartBtn.classList.add("d-none");
-        editBtn.classList.remove("d-none");
-        qtySelector.setAttribute("disabled", "")
-        return true;
-    } else {
-        return false;
-    }
+    setQty(qtyInputValue, productObject);
+
+    // addToCartBtn.classList.add("d-none");
+    // editBtn.classList.remove("d-none");
+    qtySelector.setAttribute("disabled", "")
 }
 
 /**
@@ -97,12 +91,7 @@ function findProductObject(array, productValue) {
  * 
  */
 function setQty(qtyInputValue, productObject) {
-    if (qtyInputValue > 0) {
-        productObject.quantity = qtyInputValue;
-        return true;
-    } else {
-        return false;
-    }
+    productObject.quantity = qtyInputValue;
 }
 
 /**
@@ -173,24 +162,33 @@ function clearCart() {
 
 const addToCart = (event) => {
 
-    const addToCartBtn = event.target;
+    const addToCartBtntest = event.target;
 
-    if (addToCartBtn.classList.contains("js-add-to-cart")) {
+    if (addToCartBtntest.classList.contains("js-add-to-cart")) {
 
         //unique id on button, importance: associated with unique class name on parent container. 
-        const buttonId = addToCartBtn.id;
+        const buttonId = addToCartBtntest.id;
+        const product = event.target.parentNode.parentNode.parentNode.parentNode;
+        const addToCartBtn = product.querySelector(".js-add-to-cart");
+        const editBtn = product.querySelector(".js-edit-btn");
+        const addBtn =  product.querySelector(".js-add-btn");
+        const minusBtn = product.querySelector(".js-minus-btn");
 
         //Higher Order Function -- parameters will quickly fill in parameters below...)
-        const isValid = addProduct(donutObjects, buttonId);
+        addProduct(donutObjects, buttonId);
+        
+        generateOrderTotal(donutObjects, orderTotalDiv);
+        menuContinueBtn.classList.remove("d-none");
 
-        if (isValid) {
-            generateOrderTotal(donutObjects, orderTotalDiv);
-            menuContinueBtn.classList.remove("d-none");
-        }
+        addToCartBtn.classList.add("d-none");
+        editBtn.classList.remove("d-none");
 
+        minusBtn.setAttribute("disabled", "");
+        addBtn.setAttribute("disabled", "");
+
+        event.preventDefault();
     }
         
-        event.preventDefault();
     
 }
 
@@ -203,12 +201,18 @@ const editCart = (event) => {
 
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const addToCartBtn = product.querySelector(".js-add-to-cart");
+        const addBtn =  product.querySelector(".js-add-btn");
+        const minusBtn = product.querySelector(".js-minus-btn");
+
         const productQuantitySelector = product.querySelector(".js-product-quantity");
         
         //Toggle Buttons
         addToCartBtn.classList.remove("d-none");
         editBtn.classList.add("d-none");
-        productQuantitySelector.removeAttribute("disabled", "")
+        // productQuantitySelector.removeAttribute("disabled", "")
+
+        minusBtn.removeAttribute("disabled");
+        addBtn.removeAttribute("disabled");
 
         event.preventDefault();
 
@@ -287,6 +291,9 @@ loadMenuBtn.addEventListener("click", () => {
 orderScreen.addEventListener("click", addQty);
 
 orderScreen.addEventListener("click", decreaseQty);
+
+orderScreen.addEventListener("click", addToCart);
+
 
 orderScreen.addEventListener("click", editCart);
 

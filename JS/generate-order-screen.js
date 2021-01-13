@@ -29,10 +29,15 @@ const generateContent = () => {
                     <h6 class="mt-3">Price: $${donutObjects[i]["price"]}0</h6>
                     <form name="product" class="product">
                     <div class="form-group">
+
+                      <button aria-label="Decrease value" class="js-minus-btn">-</button>
+                      <input type="text" value="0" class="display-qty">
+                      <button aria-label="Increase value" class="js-add-btn">+</button>
+
+
                       <label class="my-1 mr-2" for="vcc-qty">
                         <h6 class="d-inline-block">Quantity</h6>
                         <p class="d-inline-block font-weight-light">&ndash; Limit 10</p>
-
                       </label>
                       <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vcc-qty" name="quantity">
                         <option selected value="0">0</option>

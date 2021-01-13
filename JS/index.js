@@ -45,7 +45,7 @@ function displayContent(targetDiv) {
     targetDiv.classList.add("current-div");
 }
 
-function addProduct (array, buttonId) {
+function addProduct (array, buttonId, isAdd) {
 
     const productId = buttonId.substr(11);
     const productContainer = findProductContainer(buttonId);
@@ -53,19 +53,17 @@ function addProduct (array, buttonId) {
     const qtyInputValue = Number(productContainer.querySelector(".js-product-quantity").value);
     const productObject = findProductObject(array, productId);
     const addToCartBtn = productContainer.querySelector(".js-add-to-cart");
-    const editBtn = productContainer.querySelector(".js-edit-btn");
+    // const editBtn = productContainer.querySelector(".js-edit-btn");
 
-    const validQuantity = setQty(qtyInputValue, productObject);
-    
-    //NEED TO ADJUST --- Continue button should appear only if there is a total product quantity greater than 0. Must be able to change quantity to 0, to enable proper cart editing.
-    if (validQuantity) {
-        addToCartBtn.classList.add("d-none");
-        editBtn.classList.remove("d-none");
-        qtySelector.setAttribute("disabled", "")
-        return true;
+    if (isAdd === false) {
+        setQty(0, productObject);
     } else {
-        return false;
+        setQty(qtyInputValue, productObject);
     }
+
+    // addToCartBtn.classList.add("d-none");
+    // editBtn.classList.remove("d-none");
+    qtySelector.setAttribute("disabled", "")
 }
 
 /**
@@ -97,12 +95,7 @@ function findProductObject(array, productValue) {
  * 
  */
 function setQty(qtyInputValue, productObject) {
-    if (qtyInputValue > 0) {
-        productObject.quantity = qtyInputValue;
-        return true;
-    } else {
-        return false;
-    }
+    productObject.quantity = qtyInputValue;
 }
 
 /**
@@ -173,47 +166,121 @@ function clearCart() {
 
 const addToCart = (event) => {
 
-    const addToCartBtn = event.target;
+    const addToCartBtntest = event.target;
 
-    if (addToCartBtn.classList.contains("js-add-to-cart")) {
+    if (addToCartBtntest.classList.contains("js-add-to-cart")) {
 
         //unique id on button, importance: associated with unique class name on parent container. 
-        const buttonId = addToCartBtn.id;
+        const buttonId = addToCartBtntest.id;
+        const product = event.target.parentNode.parentNode.parentNode.parentNode;
+        const addToCartBtn = product.querySelector(".js-add-to-cart");
+        const addBtn =  product.querySelector(".js-add-btn");
+        const minusBtn = product.querySelector(".js-minus-btn");
+        const productQtyInput = product.querySelector(".display-qty");
 
-        //Higher Order Function -- parameters will quickly fill in parameters below...)
-        const isValid = addProduct(donutObjects, buttonId);
 
-        if (isValid) {
-            generateOrderTotal(donutObjects, orderTotalDiv);
-            menuContinueBtn.classList.remove("d-none");
+
+        if (addToCartBtn.classList.contains("js-remove")) {
+            addProduct(donutObjects, buttonId, false);
+            addToCartBtn.textContent = "Add"
+            addToCartBtn.classList.remove("js-remove", "custom-bg--orange");
+            productQtyInput.value = 0;
+            addBtn.removeAttribute("disabled");
+            // generateOrderTotal(donutObjects, orderTotalDiv);
+
+
+        } else {
+            //--- TO ADD: if inputvalue is less than 1, animation/alert --- nothing added.  
+            if (productQtyInput.value > 0) {
+                addProduct(donutObjects, buttonId, true);
+                addToCartBtn.textContent = "Remove"
+                addToCartBtn.classList.add("js-remove", "custom-bg--orange");
+                minusBtn.setAttribute("disabled", "");
+                addBtn.setAttribute("disabled", "");
+                // generateOrderTotal(donutObjects, orderTotalDiv);
+                menuContinueBtn.classList.remove("d-none");
+            }
         }
 
+
+
+        //Higher Order Function -- parameters will quickly fill in parameters below...)
+        
+        generateOrderTotal(donutObjects, orderTotalDiv);
+
+
+
+        // menuContinueBtn.classList.remove("d-none");
+
+        // addToCartBtn.classList.add("d-none");
+        // editBtn.classList.remove("d-none");
+
+        // minusBtn.setAttribute("disabled", "");
+        // addBtn.setAttribute("disabled", "");
+
+        event.preventDefault();
     }
         
-        event.preventDefault();
     
 }
 
 
-const editCart = (event) => {
+// const editCart = (event) => {
 
-    const editBtn = event.target;
+//     const editBtn = event.target;
 
-    if (editBtn.classList.contains("js-edit-btn")) {
+//     if (editBtn.classList.contains("js-edit-btn")) {
 
-        const product = event.target.parentNode.parentNode.parentNode.parentNode;
-        const addToCartBtn = product.querySelector(".js-add-to-cart");
-        const productQuantitySelector = product.querySelector(".js-product-quantity");
+//         const product = event.target.parentNode.parentNode.parentNode.parentNode;
+//         const addToCartBtn = product.querySelector(".js-add-to-cart");
+//         const addBtn =  product.querySelector(".js-add-btn");
+//         const minusBtn = product.querySelector(".js-minus-btn");
+
+//         const productQuantitySelector = product.querySelector(".js-product-quantity");
         
-        //Toggle Buttons
-        addToCartBtn.classList.remove("d-none");
-        editBtn.classList.add("d-none");
-        productQuantitySelector.removeAttribute("disabled", "")
+//         //Toggle Buttons
+//         addToCartBtn.classList.remove("d-none");
+//         editBtn.classList.add("d-none");
+//         // productQuantitySelector.removeAttribute("disabled", "")
 
-        event.preventDefault();
+//         minusBtn.removeAttribute("disabled");
+//         addBtn.removeAttribute("disabled");
 
-    }   
-}
+//         event.preventDefault();
+
+//     }   
+// }
+// const removeProduct = (event) => {
+
+//     const clickedBtn = event.target;
+
+//     if (clickedBtn.classList.contains("js-edit-btn")) {
+
+//         const product = event.target.parentNode.parentNode.parentNode.parentNode;
+//         const addToCartBtn = product.querySelector(".js-add-to-cart");
+//         const addBtn =  product.querySelector(".js-add-btn");
+//         const minusBtn = product.querySelector(".js-minus-btn");
+
+//         const productQtyInput = product.querySelector(".display-qty");
+//         productQtyInput.value = 0;
+
+
+//         // const productQuantitySelector = product.querySelector(".js-product-quantity");
+        
+//         //Toggle Buttons
+//         addToCartBtn.classList.remove("d-none");
+//         editBtn.classList.add("d-none");
+//         // productQuantitySelector.removeAttribute("disabled", "")
+
+//         minusBtn.removeAttribute("disabled");
+//         addBtn.removeAttribute("disabled");
+
+//         event.preventDefault();
+
+//     }   
+// }
+
+
 
 const addQty = (event) => {
     const addBtn = event.target;
@@ -288,7 +355,10 @@ orderScreen.addEventListener("click", addQty);
 
 orderScreen.addEventListener("click", decreaseQty);
 
-orderScreen.addEventListener("click", editCart);
+orderScreen.addEventListener("click", addToCart);
+
+
+// orderScreen.addEventListener("click", editCart);
 
 //---Btn to Cart Screen
 menuContinueBtn.addEventListener("click", () => {

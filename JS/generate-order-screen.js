@@ -30,29 +30,14 @@ const generateContent = () => {
                     <form name="product" class="product">
                     <div class="form-group">
 
-                      <button aria-label="Decrease value" class="js-minus-btn">-</button>
-                      <input type="text" value="0" class="display-qty">
+                      <label class="my-1 mr-2" for="qty">
+                        <h6 class="d-inline-block">Quantity</h6>
+                      </label>
+                      <button aria-label="Decrease value" class="js-minus-btn" disabled>-</button>
+                      <input type="text" value="0" id="qty" class="display-qty js-product-quantity">
                       <button aria-label="Increase value" class="js-add-btn">+</button>
 
-
-                      <label class="my-1 mr-2" for="vcc-qty">
-                        <h6 class="d-inline-block">Quantity</h6>
-                        <p class="d-inline-block font-weight-light">&ndash; Limit 10</p>
-                      </label>
-                      <select class="custom-select my-1 mr-sm-2 js-product-quantity" id="vcc-qty" name="quantity">
-                        <option selected value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                      </select>
-                      <button type="button" class="btn btn-dark mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add</button>
+                      <button type="button" class="btn mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add</button>
                       <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
 
                     </div>

@@ -45,7 +45,7 @@ function displayContent(targetDiv) {
     targetDiv.classList.add("current-div");
 }
 
-function addProduct (array, buttonId) {
+function addProduct (array, buttonId, isAdd) {
 
     const productId = buttonId.substr(11);
     const productContainer = findProductContainer(buttonId);
@@ -55,7 +55,11 @@ function addProduct (array, buttonId) {
     const addToCartBtn = productContainer.querySelector(".js-add-to-cart");
     // const editBtn = productContainer.querySelector(".js-edit-btn");
 
-    setQty(qtyInputValue, productObject);
+    if (isAdd === false) {
+        setQty(0, productObject);
+    } else {
+        setQty(qtyInputValue, productObject);
+    }
 
     // addToCartBtn.classList.add("d-none");
     // editBtn.classList.remove("d-none");
@@ -170,21 +174,49 @@ const addToCart = (event) => {
         const buttonId = addToCartBtntest.id;
         const product = event.target.parentNode.parentNode.parentNode.parentNode;
         const addToCartBtn = product.querySelector(".js-add-to-cart");
-        const editBtn = product.querySelector(".js-edit-btn");
         const addBtn =  product.querySelector(".js-add-btn");
         const minusBtn = product.querySelector(".js-minus-btn");
+        const productQtyInput = product.querySelector(".display-qty");
+
+
+
+        if (addToCartBtn.classList.contains("js-remove")) {
+            addProduct(donutObjects, buttonId, false);
+            addToCartBtn.textContent = "Add"
+            addToCartBtn.classList.remove("js-remove", "custom-bg--orange");
+            productQtyInput.value = 0;
+            addBtn.removeAttribute("disabled");
+            // generateOrderTotal(donutObjects, orderTotalDiv);
+
+
+        } else {
+            //--- TO ADD: if inputvalue is less than 1, animation/alert --- nothing added.  
+            if (productQtyInput.value > 0) {
+                addProduct(donutObjects, buttonId, true);
+                addToCartBtn.textContent = "Remove"
+                addToCartBtn.classList.add("js-remove", "custom-bg--orange");
+                minusBtn.setAttribute("disabled", "");
+                addBtn.setAttribute("disabled", "");
+                // generateOrderTotal(donutObjects, orderTotalDiv);
+                menuContinueBtn.classList.remove("d-none");
+            }
+        }
+
+
 
         //Higher Order Function -- parameters will quickly fill in parameters below...)
-        addProduct(donutObjects, buttonId);
         
         generateOrderTotal(donutObjects, orderTotalDiv);
-        menuContinueBtn.classList.remove("d-none");
 
-        addToCartBtn.classList.add("d-none");
-        editBtn.classList.remove("d-none");
 
-        minusBtn.setAttribute("disabled", "");
-        addBtn.setAttribute("disabled", "");
+
+        // menuContinueBtn.classList.remove("d-none");
+
+        // addToCartBtn.classList.add("d-none");
+        // editBtn.classList.remove("d-none");
+
+        // minusBtn.setAttribute("disabled", "");
+        // addBtn.setAttribute("disabled", "");
 
         event.preventDefault();
     }
@@ -193,31 +225,62 @@ const addToCart = (event) => {
 }
 
 
-const editCart = (event) => {
+// const editCart = (event) => {
 
-    const editBtn = event.target;
+//     const editBtn = event.target;
 
-    if (editBtn.classList.contains("js-edit-btn")) {
+//     if (editBtn.classList.contains("js-edit-btn")) {
 
-        const product = event.target.parentNode.parentNode.parentNode.parentNode;
-        const addToCartBtn = product.querySelector(".js-add-to-cart");
-        const addBtn =  product.querySelector(".js-add-btn");
-        const minusBtn = product.querySelector(".js-minus-btn");
+//         const product = event.target.parentNode.parentNode.parentNode.parentNode;
+//         const addToCartBtn = product.querySelector(".js-add-to-cart");
+//         const addBtn =  product.querySelector(".js-add-btn");
+//         const minusBtn = product.querySelector(".js-minus-btn");
 
-        const productQuantitySelector = product.querySelector(".js-product-quantity");
+//         const productQuantitySelector = product.querySelector(".js-product-quantity");
         
-        //Toggle Buttons
-        addToCartBtn.classList.remove("d-none");
-        editBtn.classList.add("d-none");
-        // productQuantitySelector.removeAttribute("disabled", "")
+//         //Toggle Buttons
+//         addToCartBtn.classList.remove("d-none");
+//         editBtn.classList.add("d-none");
+//         // productQuantitySelector.removeAttribute("disabled", "")
 
-        minusBtn.removeAttribute("disabled");
-        addBtn.removeAttribute("disabled");
+//         minusBtn.removeAttribute("disabled");
+//         addBtn.removeAttribute("disabled");
 
-        event.preventDefault();
+//         event.preventDefault();
 
-    }   
-}
+//     }   
+// }
+// const removeProduct = (event) => {
+
+//     const clickedBtn = event.target;
+
+//     if (clickedBtn.classList.contains("js-edit-btn")) {
+
+//         const product = event.target.parentNode.parentNode.parentNode.parentNode;
+//         const addToCartBtn = product.querySelector(".js-add-to-cart");
+//         const addBtn =  product.querySelector(".js-add-btn");
+//         const minusBtn = product.querySelector(".js-minus-btn");
+
+//         const productQtyInput = product.querySelector(".display-qty");
+//         productQtyInput.value = 0;
+
+
+//         // const productQuantitySelector = product.querySelector(".js-product-quantity");
+        
+//         //Toggle Buttons
+//         addToCartBtn.classList.remove("d-none");
+//         editBtn.classList.add("d-none");
+//         // productQuantitySelector.removeAttribute("disabled", "")
+
+//         minusBtn.removeAttribute("disabled");
+//         addBtn.removeAttribute("disabled");
+
+//         event.preventDefault();
+
+//     }   
+// }
+
+
 
 const addQty = (event) => {
     const addBtn = event.target;
@@ -295,7 +358,7 @@ orderScreen.addEventListener("click", decreaseQty);
 orderScreen.addEventListener("click", addToCart);
 
 
-orderScreen.addEventListener("click", editCart);
+// orderScreen.addEventListener("click", editCart);
 
 //---Btn to Cart Screen
 menuContinueBtn.addEventListener("click", () => {

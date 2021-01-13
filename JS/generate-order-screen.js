@@ -37,7 +37,7 @@ const generateContent = () => {
                       <input type="text" value="0" id="qty" class="display-qty js-product-quantity">
                       <button aria-label="Increase value" class="js-add-btn">+</button>
 
-                      <button type="button" class="btn btn-dark mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add</button>
+                      <button type="button" class="btn mt-2 js-add-to-cart" id="js-product-${donutObjects[i]["id"]}">Add</button>
                       <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
 
                     </div>

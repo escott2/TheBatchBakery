@@ -116,7 +116,7 @@ function generateOrderTotal(array, displayDiv) {
     salesTax = itemTotal * 0.06875;
     orderTotal = itemTotal + deliveryCharge + salesTax;
 
-    totalHtml += `
+    totalHtml += ` 
                 <ul class="list-unstyled ml-4 mt-3">
                     <li><span class="font-weight-bold">Item Total:</span> $${itemTotal.toFixed(2)}</li>
                     <li><span class="font-weight-bold">Delivery:</span> $${deliveryCharge.toFixed(2)}</li>

@@ -185,6 +185,8 @@ const addToCart = (event) => {
             addToCartBtn.textContent = "Add"
             addToCartBtn.classList.remove("js-remove", "custom-bg--orange");
             addToCartBtn.classList.add("custom-color--blue");
+            product.classList.add("custom-border--blue");
+            product.classList.remove("custom-border--orange");
 
             productQtyInput.value = 0;
             addBtn.removeAttribute("disabled");
@@ -198,6 +200,9 @@ const addToCart = (event) => {
                 addToCartBtn.textContent = "Remove";
                 addToCartBtn.classList.remove("custom-color--blue");
                 addToCartBtn.classList.add("js-remove", "custom-bg--orange");
+                product.classList.remove("custom-border--blue");
+                product.classList.add("custom-border--orange");
+
                 minusBtn.setAttribute("disabled", "");
                 addBtn.setAttribute("disabled", "");
                 // generateOrderTotal(donutObjects, orderTotalDiv);
@@ -339,6 +344,8 @@ homeNav.addEventListener("click", () => {
 
 orderNav.addEventListener("click", () => {
     displayContent(menuDiv);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 });
 
 cartNav.addEventListener("click", () => {
@@ -348,6 +355,8 @@ cartNav.addEventListener("click", () => {
 //---Btn to Order Screen
 loadMenuBtn.addEventListener("click", () => {
     displayContent(menuDiv);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 });
 
 //END HOME PAGE EVENTS

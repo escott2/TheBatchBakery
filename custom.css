@@ -92,8 +92,8 @@ ul button {
 }
 
 .round-div {
-    width: 325px;
-    height: 325px;
+    width: 300px;
+    height: 300px;
 }
 
 .custom-color--gray {
@@ -107,7 +107,14 @@ ul button {
 
 .custom-border--gray {
     border: 0.75em solid #E5E3E3;
+}
 
+.custom-border--blue {
+    border: 0.3em solid #243540;
+}
+
+.custom-border--orange {
+    border: 0.3em solid #D98236;
 }
 
 .custom-bg--orange {
@@ -131,10 +138,6 @@ ul button {
     background-color: #2D1E1A;
 }
 
-.custom-border--orange {
-    border: 0.5em solid #D98236;
-}
-
 .custom-bg--green {
     background-color: #5E6844;
 }
@@ -143,6 +146,13 @@ ul button {
     background-image: url("img/sprinkle.svg");
 
 }
+
+.donut-background--blue {
+    background-image: url("img/sprinkle-blue.svg");
+
+}
+
+
 
 .custom-col-selling {
     width: 100%;
@@ -153,9 +163,6 @@ ul button {
     display: block;
 }
 
-.product-card {
-    border: solid 0.5em #243540;
-}
 
 .description {
     height: 48px;
@@ -225,8 +232,8 @@ ul button {
     }
 
     .round-div {
-        width: 280px;
-        height: 280px; 
+        width: 250px;
+        height: 250px; 
     }
 
 }
@@ -234,7 +241,7 @@ ul button {
 @media (max-width: 370px) {
 
     .round-div {
-        width: 240px;
-        height: 240px;
+        width: 220px;
+        height: 220px;
     }
 }

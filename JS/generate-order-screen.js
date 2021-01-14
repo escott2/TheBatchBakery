@@ -15,7 +15,7 @@ const generateContent = () => {
     for (let i = 0; i < donutObjects.length; i++) {
         html += `
                 <div class="col-lg-4 col-md-6">
-                <div class="card my-4 product-card js-get-id js-product-${donutObjects[i]["id"]}">
+                <div class="card my-4 custom-border--blue js-get-id js-product-${donutObjects[i]["id"]}">
                 <div class="card-body">
                 `;
         html += `

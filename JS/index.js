@@ -184,6 +184,8 @@ const addToCart = (event) => {
             addProduct(donutObjects, buttonId, false);
             addToCartBtn.textContent = "Add"
             addToCartBtn.classList.remove("js-remove", "custom-bg--orange");
+            addToCartBtn.classList.add("custom-color--blue");
+
             productQtyInput.value = 0;
             addBtn.removeAttribute("disabled");
             // generateOrderTotal(donutObjects, orderTotalDiv);
@@ -193,7 +195,8 @@ const addToCart = (event) => {
             //--- TO ADD: if inputvalue is less than 1, animation/alert --- nothing added.  
             if (productQtyInput.value > 0) {
                 addProduct(donutObjects, buttonId, true);
-                addToCartBtn.textContent = "Remove"
+                addToCartBtn.textContent = "Remove";
+                addToCartBtn.classList.remove("custom-color--blue");
                 addToCartBtn.classList.add("js-remove", "custom-bg--orange");
                 minusBtn.setAttribute("disabled", "");
                 addBtn.setAttribute("disabled", "");

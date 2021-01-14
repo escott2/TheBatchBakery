@@ -110,11 +110,12 @@ ul button {
 }
 
 .custom-border--blue {
-    border: 0.3em solid #243540;
+    border: 0.5em solid #243540;
+    
 }
 
 .custom-border--orange {
-    border: 0.3em solid #D98236;
+    border: 0.75em solid #D98236;
 }
 
 .custom-bg--orange {

@@ -138,17 +138,31 @@ function generateCartContent(array, showCartContentDiv) {
         if (donutObjects[i]["quantity"] > 0) {
 
         cartHtml += `
-                <div class="row mt-3">
-                    <div class="col-md-4 col-8">
-                    <p>${donutObjects[i]["name"]}</p>
+            <div class="card py-2 mb-4">
+
+                <div class="row my-3 pl-4 align-items-center justify-content-start">
+                    <div class="col-12">
+                    <h3 class="mb-4 pl-2 py-2 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
                     </div>
-                    <div class="col-md-3 col-2">
-                    <p>${donutObjects[i]["price"]}</p>
+                    <div class="col-md-4 col-12 text-center">
+                        <img class="w-75" src="img/${donutObjects[i]["img"]}"></img>
                     </div>
-                    <div class="col-md-3 col-2">
-                    <p>${donutObjects[i]["quantity"]}</p>
+                    <div class="col-md-6 col-12">
+                        <div class="row">
+                            <div class="col-10  mx-auto mt-2">
+                            <h4 class="d-inline">Price:</h4>
+                            <p class="d-inline">${donutObjects[i]["price"]}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10  mx-auto mt-2">
+                            <h4 class="d-inline">Quantity:</h4>
+                            <p class="d-inline">${donutObjects[i]["quantity"]}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
                 
                 `
             }
@@ -185,7 +199,7 @@ const addToCart = (event) => {
             addToCartBtn.textContent = "Add"
             addToCartBtn.classList.remove("js-remove", "custom-bg--orange");
             addToCartBtn.classList.add("custom-color--blue");
-            product.classList.add("custom-border--blue");
+            product.classList.add("custom-border--gray");
             product.classList.remove("custom-border--orange");
 
             productQtyInput.value = 0;
@@ -200,7 +214,7 @@ const addToCart = (event) => {
                 addToCartBtn.textContent = "Remove";
                 addToCartBtn.classList.remove("custom-color--blue");
                 addToCartBtn.classList.add("js-remove", "custom-bg--orange");
-                product.classList.remove("custom-border--blue");
+                product.classList.remove("custom-border--gray");
                 product.classList.add("custom-border--orange");
 
                 minusBtn.setAttribute("disabled", "");

@@ -21,7 +21,7 @@ const generateContent = () => {
         html += `
                  <div class="d-flex flex-column align-items-center">
                     <div>
-                    <h5 class="card-title text-center p-3 custom-color--gray js-product-name">${donutObjects[i]["name"]}</h5>
+                    <h5 class="card-title text-center p-3 custom-color--blue text-white js-product-name">${donutObjects[i]["name"]}</h5>
                     <p class="card-text text-center description mb-4">${donutObjects[i]["description"]}</p>
                     </div>
                     <img class="donut-menu-img w-75 pl-3" src= "img/${donutObjects[i]["img"]}">

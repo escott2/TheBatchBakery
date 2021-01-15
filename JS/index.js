@@ -138,12 +138,9 @@ function generateCartContent(array, showCartContentDiv) {
         if (donutObjects[i]["quantity"] > 0) {
 
         cartHtml += `
-            <div class="card py-2 mb-4">
-
+            <div class="card custom-border--gray mb-4">
+                <h3 class="mb-4 pl-2 py-2 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
                 <div class="row my-3 pl-4 align-items-center justify-content-start">
-                    <div class="col-12">
-                    <h3 class="mb-4 pl-2 py-2 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
-                    </div>
                     <div class="col-md-4 col-12 text-center">
                         <img class="cart__donut-img" src="img/${donutObjects[i]["img"]}"></img>
                     </div>

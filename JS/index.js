@@ -145,13 +145,13 @@ function generateCartContent(array, showCartContentDiv) {
                     <h3 class="mb-4 pl-2 py-2 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
                     </div>
                     <div class="col-md-4 col-12 text-center">
-                        <img class="w-75" src="img/${donutObjects[i]["img"]}"></img>
+                        <img class="cart__donut-img" src="img/${donutObjects[i]["img"]}"></img>
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="row">
                             <div class="col-10  mx-auto mt-2">
                             <h4 class="d-inline">Price:</h4>
-                            <p class="d-inline">${donutObjects[i]["price"]}</p>
+                            <p class="d-inline">$${donutObjects[i]["price"]}0</p>
                             </div>
                         </div>
                         <div class="row">

@@ -7,15 +7,31 @@ dark blue: #243540*/
     box-sizing: border-box;
 } */
 
+/* GLOBAL STYLES ----------------------------------------------*/
 
-h6 {
+body {
     font-family: 'Lato', sans-serif;
-    font-weight: 900;
+    font-weight: 400;
+
 }
 
-section {
-    display: none;
+/* --- Typography --- */
+
+h1, h2, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
+
+h3 {
+    font-family: 'Jaldi', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
 
 header .display-4 {
     font-family: 'Lato', sans-serif;
@@ -23,18 +39,67 @@ header .display-4 {
     margin: 0;
 }
 
-.donut-img {
-    width: 235px;
-    min-width: 175px;
+section {
+    display: none;
 }
+
+
+/* --- Custom Styles --- */
+
+.custom-color--gray {
+    background-color: #E5E3E3;
+}
+
+.custom-color--blue {
+    background-color: #243540;
+}
+
+.custom-border--gray {
+    border: 0.75em solid #E5E3E3;
+}
+
+.custom-border--blue {
+    border: 0.5em solid #243540;
+
+}
+
+.custom-border--orange {
+    border: 0.75em solid #D98236;
+}
+
+.custom-bg--orange {
+    background-color: #D98236;
+}
+
+.donut-background--blue {
+    background-image: url("img/sprinkle-blue.svg");
+}
+
+/* --- JS Event Styles --- */
+
+.current-div {
+    display: block;
+}
+
+
+
+
+/* LAYOUT ------------------------------------- */
+
+/* --- Header --- */
 
 .title-wrapper {
     width: 50%;
 }
 
-.home-donut {
-    transform: translateY(-40px);
+.header__img {
+    width: 235px;
+    min-width: 175px;
 }
+
+/* --- Home Screen --- */
+
+/* Nav */
 
 nav .lato--bold,
 .lato--bold {
@@ -49,11 +114,6 @@ nav .custom-font--jaldi {
     font-size: 2rem;
 }
 
-
-/* .fontAwesome {
-    font-family: 'Helvetica', FontAwesome, sans-serif;
-} */
-
 nav .btn {
     font-size: 1.25rem;
 }
@@ -64,109 +124,34 @@ ul button {
 }
 
 .coffee-pastry-img {
-    /* width: 300px;
-    height: auto; */
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .batch-bundle-img {
-    /* width: 310px;
-    height: auto; */
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.btn-danger {
-    background-color: #D98236;
-    border: none;
-}
-
-/* .navbar-light {
-    background-color: white;
-
-} */
-
-
-.round-btn {
-    width: 150px;
-    height: 150px;
-}
-
-.round-div {
+.home__donut-sprinkle {
+    transform: translateY(-40px);
     width: 300px;
     height: 300px;
 }
 
-.custom-color--gray {
-    background-color: #E5E3E3;
+.home__start-order-btn {
+    width: 150px;
+    height: 150px;
 }
 
-.custom-color--blue {
-    background-color: #243540;
-}
-
-
-.custom-border--gray {
-    border: 0.75em solid #E5E3E3;
-}
-
-.custom-border--blue {
-    border: 0.5em solid #243540;
-    
-}
-
-.custom-border--orange {
-    border: 0.75em solid #D98236;
-}
-
-.custom-bg--orange {
-    background-color: #D98236;
-}
-
-.custom-bg--light-cream {
-    background-color: #FDFAEE;
-}
-
-
-.custom-bg--dark-cream {
-    background-color: #EDE0C6;
-}
-
-.custom-bg--black {
-    background-color: #000000;
-}
-
-.custom-bg--brown {
-    background-color: #2D1E1A;
-}
-
-.custom-bg--green {
-    background-color: #5E6844;
-}
-
-.donut-background {
-    background-image: url("img/sprinkle.svg");
-
-}
-
-.donut-background--blue {
-    background-image: url("img/sprinkle-blue.svg");
-}
-
-
+/* --- Order Screen --- */
 
 .custom-col-selling {
     width: 100%;
     height: 100%;
 }
-
-.current-div {
-    display: block;
-}
-
 
 .description {
     height: 48px;
@@ -178,22 +163,31 @@ ul button {
     font-size: 20px;
     border-style: solid;
     border-color: #E5E3E3;
-
 }
 
-.js-minus-btn, .js-add-btn {
+.js-minus-btn,
+.js-add-btn {
     width: 35px;
-    /* border-radius: 50%; */
     border-style: solid;
     border-color: #E5E3E3;
-    /* border: 0.5 solid black; */
     margin: 0 0.5em;
-    
+    text-align: center;
 }
 
 .js-order-screen-total {
     border-top: 0.5em solid #E5E3E3;
 }
+
+
+/* --- Cart Screen --- */
+
+.cart__donut-img {
+    width: 100px;
+
+}
+
+/* Media Queries  ------------------------------------- */
+
 
 @media (max-width: 768px) {
 
@@ -218,7 +212,7 @@ ul button {
         margin-top: 5px;
     }
 
-    .donut-img {
+    .header__img {
         display: none;
     }
 
@@ -227,24 +221,24 @@ ul button {
     }
 
     .cart-content-container.bg-light {
-        background-color:  #F3E9DA;
+        background-color: #F3E9DA;
     }
 
-    .round-btn {
+    .home__start-order-btn {
         width: 125px;
         height: 125px;
     }
 
-    .round-div {
+    .home__donut-sprinkle {
         width: 250px;
-        height: 250px; 
+        height: 250px;
     }
 
 }
 
 @media (max-width: 370px) {
 
-    .round-div {
+    .home__donut-sprinkle {
         width: 220px;
         height: 220px;
     }

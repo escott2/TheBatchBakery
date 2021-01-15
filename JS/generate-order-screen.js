@@ -16,17 +16,17 @@ const generateContent = () => {
         html += `
                 <div class="col-lg-4 col-md-6">
                 <div class="card my-4 custom-border--gray js-get-id js-product-${donutObjects[i]["id"]}">
+                <h3 class=" text-center p-3 custom-color--gray js-product-name">${donutObjects[i]["name"]}</h3>
                 <div class="card-body">
                 `;
         html += `
                  <div class="d-flex flex-column align-items-center">
                     <div>
-                    <h3 class="card-title text-center p-3 custom-color--gray js-product-name">${donutObjects[i]["name"]}</h3>
                     <p class="card-text text-center description mb-4">${donutObjects[i]["description"]}</p>
                     </div>
                     <img class="donut-menu-img w-75" src="img/${donutObjects[i]["img"]}" alt="${donutObjects[i]["alt"]}">
                   </div>
-                    <h4 class="my-3 p-2 w-50 mx-auto text-center">Price: $${donutObjects[i]["price"]}0</h4>
+                    <h4 class="my-3 p-2 w-50 mx-auto text-center">$${donutObjects[i]["price"]}0</h4>
                     <form name="product" class="product">
                     <div class="form-group d-flex flex-column align-items-center">
 

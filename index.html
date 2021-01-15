@@ -144,12 +144,12 @@
       <div
         class="col-lg-11 col-md-12 pb-4 custom-color--gray order-md-1 order-12 d-flex flex-column justify-content-center donut-background--blue">
         <h2 class="text-center mb-4 py-3 custom-color--gray">Ready to Order?</h2>
-        <div role="img" aria-label="Blue sprinkle donut" class="home__donut-sprinkle rounded-circle custom-bg--orange d-flex align-items-center mx-auto">
+        <!-- <div role="img" aria-label="Blue sprinkle donut" class="home__donut-sprinkle rounded-circle custom-bg--orange d-flex align-items-center mx-auto"> -->
           <button
-            class="btn home__start-order-btn rounded-circle my-2 mx-auto my-sm-0 custom-color--blue text-white lato--bold js-load-menu">
+            class="btn home__start-order-btn rounded-circle my-2 mx-auto my-sm-0 bg-white lato--bold js-load-menu">
             Start Order
           </button>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </section>
@@ -163,8 +163,8 @@
           View Menu
         </button>
       </div> -->
-    <h2 class="order-heading custom-text--orange text-center text-md-left ml-md-2">Order</h2>
-    <div class="row test js-order-screen p-1 p-lg-3"></div>
+    <h2 class="order-heading custom-text--orange text-center mt-4">Order</h2>
+    <div class="row test js-order-screen"></div>
     <div class="row mt-4 js-order-screen-total">
 
     </div>
@@ -176,15 +176,18 @@
   </section>
 
   <!-- Cart -->
-  <section class="container mt-4 py-4 js-cart-div">
+  <section class="container mt-2 pb-4 js-cart-div">
     <div class="row mx-md-4"">
         <h2 class="cart-heading ml-2 mx-auto">Cart</h2>
         <div
-          class=" container cart-content-container js-cart-content"></div>
+          class="container cart-content-container js-cart-content"></div>
   </div>
   <div class="row js-cart-total mx-3"></div>
   <div class="row justify-content-end">
-    <button type="button" class="btn custom-color--blue text-white mr-4 js-cart-continue-btn">
+    <button type="button" class="btn custom-bg--orange text-white mr-4 js-order-nav">
+      Return to Order 
+    </button>
+    <button type="button" class="btn w-50 custom-color--blue text-white mr-4 js-cart-continue-btn">
       Continue to Order Options 
     </button>
   </div>
@@ -209,7 +212,7 @@
             </div>
           </div>
         </div>
-          <button type="submit" class="btn custom-color--blue text-white js-option-continue-btn">
+          <button type="submit" class="btn w-50 custom-color--blue text-white js-option-continue-btn">
             Continue
           </button>
       </form>
@@ -262,7 +265,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-success js-pickup-continue-btn">
+        <button type="submit" class="btn w-50 custom-color--blue text-white js-pickup-continue-btn">
           Continue to Order Summary
         </button>
       </form>
@@ -338,7 +341,7 @@
             <input class="form-control" type="time" value="10:00:00" id="del-time-input" required />
           </div>
         </div>
-        <button type="submit" class="btn btn-success js-delivery-continue-btn">
+        <button type="submit" class="btn custom-color--blue text-white w-50 js-delivery-continue-btn">
           Continue to Order Summary
         </button>
       </form>
@@ -353,7 +356,10 @@
     </div>
     <div class="row js-review-total mx-3"></div>
     <div class="row justify-content-end">
-      <button type="button" class="btn custom-color--blue text-white mr-4 js-review-continue-btn">
+      <button type="button" class="btn custom-bg--orange text-white mr-4 js-order-nav">
+        Return to Order 
+      </button>
+      <button type="button" class="btn w-50 custom-color--blue text-white mr-4 js-review-continue-btn">
         Submit Order
       </button>
     </div>

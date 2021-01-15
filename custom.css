@@ -17,14 +17,17 @@ body {
 
 /* --- Typography --- */
 
-h1, h2, h4, h5, h6 {
+h1, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
 }
 
-h3 {
+h2, h3 {
     font-family: 'Jaldi', sans-serif;
     font-weight: 400;
+}
+
+h3 {
     font-size: 20px;
 }
 
@@ -32,31 +35,26 @@ h4 {
     font-size: 18px;
 }
 
-
 header .display-4 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     margin: 0;
 }
 
-.js-home-div h2 {
-    font-family: 'Jaldi', sans-serif;
-}
+/*REMOVE ALL THESE CLASSES, NOT NEEDED*/
 
-.order-heading, .cart-heading {
+/* .cart-heading, .options-heading, .pickup-heading, .delivery-heading, .review-heading {
     font-weight: 900;
-    font-size: 70px;
-}
+    font-size: 50px;
+    color: black;
+    text-shadow: -6px 0 #E5E3E3, 0 1px #E5E3E3, 0px 0 #E5E3E3, 0 0px #E5E3E3;
+} */
 
 .order-heading {
     font-size: 80px;
-    transform: translateY(32px);
-    text-shadow: -6px 0 #9B5D26, 0 1px #9B5D26, 0px 0 #9B5D26, 0 0px #9B5D26;
-}
-
-.options-heading, .pickup-heading, .delivery-heading, .review-heading {
+    font-family: 'Lato', sans-serif;
     font-weight: 900;
-    font-size: 50px;
+    text-shadow: -6px 0 #9B5D26, 0 1px #9B5D26, 0px 0 #9B5D26, 0 0px #9B5D26;
 }
 
 /* --- Custom Styles --- */
@@ -168,10 +166,11 @@ ul button {
 }
 
 .home__start-order-btn {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     font-weight: 900;
     font-size: 30px;
+    box-shadow: -9px 5px black;
     
 }
 
@@ -184,6 +183,11 @@ ul button {
 
 .description {
     height: 48px;
+}
+
+.donut-menu-img-wrapper {
+    height: 150px;
+    width: auto;
 }
 
 .display-qty {
@@ -212,8 +216,13 @@ ul button {
 
 .cart__donut-img {
     width: 100px;
-
 }
+
+.cart-empty-alert {
+    font-size: 20px;
+    text-align: center;
+}
+
 
 /* Media Queries  ------------------------------------- */
 
@@ -245,17 +254,17 @@ ul button {
         display: none;
     }
 
-    .card-body .donut-menu-img {
+    /* .card-body .donut-menu-img {
         height: 1%;
-    }
+    } */
 
     .cart-content-container.bg-light {
         background-color: #F3E9DA;
     }
 
     .home__start-order-btn {
-        width: 125px;
-        height: 125px;
+        width: 150px;
+        height: 150px;
     }
 
     .home__donut-sprinkle {

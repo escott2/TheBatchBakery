@@ -21,10 +21,10 @@ const generateContent = () => {
         html += `
                  <div class="d-flex flex-column align-items-center">
                     <div>
-                    <h5 class="card-title text-center p-3 custom-color--blue text-white js-product-name">${donutObjects[i]["name"]}</h5>
+                    <h5 class="card-title text-center p-3 custom-color--gray js-product-name">${donutObjects[i]["name"]}</h5>
                     <p class="card-text text-center description mb-4">${donutObjects[i]["description"]}</p>
                     </div>
-                    <img class="donut-menu-img w-75 pl-3" src= "img/${donutObjects[i]["img"]}">
+                    <img class="donut-menu-img w-75" src= "img/${donutObjects[i]["img"]}">
                   </div>
                     <h6 class="my-3 p-2 w-50 mx-auto text-center">Price: $${donutObjects[i]["price"]}0</h6>
                     <form name="product" class="product">
@@ -40,7 +40,7 @@ const generateContent = () => {
                         <button aria-label="Increase value" class="js-add-btn custom-color--blue text-white">+</button>
                       </div>
 
-                      <button type="button" class="btn mt-2 js-add-to-cart w-100 custom-color--blue text-white" id="js-product-${donutObjects[i]["id"]}">Add</button>
+                      <button type="button" class="btn mt-2 js-add-to-cart w-100 custom-color--blue text-white" id="js-product-${donutObjects[i]["id"]}">Add to Cart</button>
                       <button type="submit" class="btn btn-danger d-none js-edit-btn mt-2">Edit</button>
 
                     </div>

@@ -142,11 +142,11 @@
 
     <div class="row mt-4 justify-content-center no-gutters d-flex align-items-stretch">
       <div
-        class="col-lg-11 col-md-12 pb-4 custom-color--gray order-md-1 order-12 d-flex flex-column justify-content-center overflow-hidden">
-        <h2 class="text-center mb-4 py-5 custom-bg--orange text-white">Ready to Order?</h2>
-        <div role="img" aria-label="Blue sprinkle donut" class="home__donut-sprinkle rounded-circle donut-background--blue d-flex align-items-center mx-auto">
+        class="col-lg-11 col-md-12 pb-4 custom-color--gray order-md-1 order-12 d-flex flex-column justify-content-center donut-background--blue">
+        <h2 class="text-center mb-4 py-3 custom-color--gray">Ready to Order?</h2>
+        <div role="img" aria-label="Blue sprinkle donut" class="home__donut-sprinkle rounded-circle custom-bg--orange d-flex align-items-center mx-auto">
           <button
-            class="btn home__start-order-btn rounded-circle my-2 mx-auto my-sm-0 bg-white lato--bold js-load-menu">
+            class="btn home__start-order-btn rounded-circle my-2 mx-auto my-sm-0 custom-color--blue text-white lato--bold js-load-menu">
             Start Order
           </button>
         </div>
@@ -163,8 +163,8 @@
           View Menu
         </button>
       </div> -->
-    <h2 class="order-heading custom-text--orange ml-2 ml-md-4 ml-lg-5">Order</h2>
-    <div class="row test js-order-screen p-1 p-lg-3 donut-background--blue"></div>
+    <h2 class="order-heading custom-text--orange text-center text-md-left ml-md-2">Order</h2>
+    <div class="row test js-order-screen p-1 p-lg-3"></div>
     <div class="row mt-4 js-order-screen-total">
 
     </div>
@@ -178,14 +178,14 @@
   <!-- Cart -->
   <section class="container mt-4 py-4 js-cart-div">
     <div class="row mx-md-4"">
-        <h2 class="cart-heading custom-text--orange ml-2 ml-md-4 ml-lg-5">Cart</h2>
+        <h2 class="cart-heading ml-2 mx-auto">Cart</h2>
         <div
           class=" container cart-content-container js-cart-content"></div>
   </div>
   <div class="row js-cart-total mx-3"></div>
   <div class="row justify-content-end">
     <button type="button" class="btn custom-color--blue text-white mr-4 js-cart-continue-btn">
-      Continue
+      Continue to Order Options 
     </button>
   </div>
   </section>
@@ -195,7 +195,7 @@
     <div class="row justify-content-center text-center">
       <div class="col">
       <form class="mx-4">
-        <h2>Order Options</h2>
+        <h2 class="options-heading">Order Options</h2>
         <p>How would you like to receive your order?</p>
         <div class="form-row">
           <div class="form-group col">
@@ -221,7 +221,7 @@
   <section class="container mt-4 py-4 js-pickup-form-div">
     <div class="row js-customer-form">
       <form class="mx-4 js-pickup-form">
-        <h2>Pickup Information</h2>
+        <h2 class="pickup-heading">Pickup Information</h2>
         <p>Please complete all fields.</p>
         <div class="form-row">
           <div class="form-group col">
@@ -263,7 +263,7 @@
         </div>
 
         <button type="submit" class="btn btn-success js-pickup-continue-btn">
-          Continue
+          Continue to Order Summary
         </button>
       </form>
     </div>
@@ -273,7 +273,7 @@
   <section class="container mt-4 py-4 js-delivery-form-div">
     <div class="row js-customer-form">
       <form class="mx-4 js-delivery-form">
-        <h2>Delivery Information</h2>
+        <h2 class="delivery-heading">Delivery Information</h2>
         <p>Please complete all fields.</p>
         <div class="form-row">
           <div class="form-group col">
@@ -339,7 +339,7 @@
           </div>
         </div>
         <button type="submit" class="btn btn-success js-delivery-continue-btn">
-          Continue
+          Continue to Order Summary
         </button>
       </form>
     </div>
@@ -348,12 +348,12 @@
   <!-- Review Order -->
   <section class="container mt-4 py-4 js-review-div">
     <div class="row mx-4">
-      <h2>Review Your Order</h2>
-      <div class="container cart-content-container js-review-content-div"></div>
+      <h2 class="review-heading">Review Your Order</h2>
+      <div class="container cart-content-container js-review-content-div donut-background--blue p-4"></div>
     </div>
     <div class="row js-review-total mx-3"></div>
     <div class="row justify-content-end">
-      <button type="button" class="btn btn-success mr-4 js-review-continue-btn">
+      <button type="button" class="btn custom-color--blue text-white mr-4 js-review-continue-btn">
         Submit Order
       </button>
     </div>

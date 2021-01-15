@@ -46,16 +46,18 @@ header .display-4 {
 .order-heading, .cart-heading {
     font-weight: 900;
     font-size: 70px;
-    /* text-shadow: -1px 0 #8A5322, 0 1px #8A5322, 1px 0 #8A5322, 0 -1px #8A5322; */
-    text-shadow: -3px 0 #9B5D26, 0 1px #9B5D26, 0px 0 #9B5D26, 0 0px #9B5D26;
-    z-index: 1;
 }
 
 .order-heading {
-    transform: translateY(26px);
+    font-size: 80px;
+    transform: translateY(32px);
+    text-shadow: -6px 0 #9B5D26, 0 1px #9B5D26, 0px 0 #9B5D26, 0 0px #9B5D26;
 }
 
-
+.options-heading, .pickup-heading, .delivery-heading, .review-heading {
+    font-weight: 900;
+    font-size: 50px;
+}
 
 /* --- Custom Styles --- */
 
@@ -161,7 +163,6 @@ ul button {
 }
 
 .home__donut-sprinkle {
-    transform: translateY(-40px);
     width: 400px;
     height: 400px;
 }

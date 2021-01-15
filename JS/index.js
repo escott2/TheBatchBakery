@@ -139,12 +139,12 @@ function generateCartContent(array, showCartContentDiv) {
 
         cartHtml += `
             <div class="card custom-border--gray mb-4">
-                <h3 class="mb-4 pl-2 py-2 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
-                <div class="row my-3 pl-4 align-items-center justify-content-start">
+                <h3 class="pl-2 py-2 m-0 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
+                <div class="row my-3 pl-lg-4 align-items-center justify-content-center">
                     <div class="col-md-4 col-12 text-center">
                         <img class="cart__donut-img" src="img/${donutObjects[i]["img"]}"></img>
                     </div>
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-6 col-12 text-center">
                         <div class="row">
                             <div class="col-10  mx-auto mt-2">
                             <h4 class="d-inline">Price:</h4>

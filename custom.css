@@ -35,7 +35,6 @@ h4 {
     font-size: 18px;
 }
 
-
 header .display-4 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
@@ -217,8 +216,13 @@ ul button {
 
 .cart__donut-img {
     width: 100px;
-
 }
+
+.cart-empty-alert {
+    font-size: 20px;
+    text-align: center;
+}
+
 
 /* Media Queries  ------------------------------------- */
 

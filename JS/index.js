@@ -18,7 +18,7 @@ const homeDiv = document.querySelector(".js-home-div");
 
 //---Btn
 const homeNav = document.querySelector(".js-home-nav");
-const orderNav = document.querySelector(".js-order-nav");
+const orderNav = document.querySelectorAll(".js-order-nav");
 const cartNav = document.querySelector(".js-cart-nav");
 
 const menuContinueBtn = document.querySelector(".js-menu-continue-btn");
@@ -127,44 +127,57 @@ function generateOrderTotal(array, displayDiv) {
 
     displayDiv.innerHTML = totalHtml;
 
+
 }
 
 function generateCartContent(array, showCartContentDiv) {
 
     let cartHtml = "";
+    let isItemsInCart = false;
     
     for (let i = 0; i < array.length; i++) {
-    //if qty != 0, display object ["name"]["price"]["quantity"]
         if (donutObjects[i]["quantity"] > 0) {
 
-        cartHtml += `
-            <div class="card custom-border--gray mb-4">
-                <h3 class="pl-2 py-2 m-0 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
-                <div class="row my-3 pl-lg-4 align-items-center justify-content-center">
-                    <div class="col-md-4 col-12 text-center">
-                        <img class="cart__donut-img" src="img/${donutObjects[i]["img"]}"></img>
-                    </div>
-                    <div class="col-md-6 col-12 text-center">
-                        <div class="row">
-                            <div class="col-10  mx-auto mt-2">
-                            <h4 class="d-inline">Price:</h4>
-                            <p class="d-inline">$${donutObjects[i]["price"]}0</p>
-                            </div>
+            cartContinueBtn.classList.remove("d-none");
+            isItemsInCart = true;
+
+            cartHtml += `
+                <div class="card custom-border--gray mb-4">
+                    <h3 class="pl-2 py-2 m-0 custom-color--gray">${donutObjects[i]["name"]} Donut</h3>
+                    <div class="row my-3 pl-lg-4 align-items-center justify-content-center">
+                        <div class="col-md-4 col-12 text-center">
+                            <img class="cart__donut-img" src="img/${donutObjects[i]["img"]}"></img>
                         </div>
-                        <div class="row">
-                            <div class="col-10  mx-auto mt-2">
-                            <h4 class="d-inline">Quantity:</h4>
-                            <p class="d-inline">${donutObjects[i]["quantity"]}</p>
+                        <div class="col-md-6 col-12 text-center">
+                            <div class="row">
+                                <div class="col-10  mx-auto mt-2">
+                                <h4 class="d-inline">Price:</h4>
+                                <p class="d-inline">$${donutObjects[i]["price"]}0</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10  mx-auto mt-2">
+                                <h4 class="d-inline">Quantity:</h4>
+                                <p class="d-inline">${donutObjects[i]["quantity"]}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-                
-                `
-            }
+                    
+                    `
+        } 
+    }
 
+    if (isItemsInCart === false) {
+        cartHtml += `<p class="cart-empty-alert">Your cart is empty.</p>`;
+        if (!cartContinueBtn.classList.contains("d-none")){
+            cartContinueBtn.classList.add("d-none");
         }
+
+        // showCartContentDiv.innerHTML = cartHtml;
+        // return;
+    }
 
     showCartContentDiv.innerHTML = cartHtml;
 }
@@ -353,11 +366,18 @@ homeNav.addEventListener("click", () => {
     displayContent(homeDiv);
 })
 
-orderNav.addEventListener("click", () => {
+// orderNav.addEventListener("click", () => {
+//     displayContent(menuDiv);
+//     document.body.scrollTop = 0;
+//     document.documentElement.scrollTop = 0;
+// });
+
+orderNav.forEach(button => button.addEventListener("click", () => {
     displayContent(menuDiv);
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-});
+    })
+);
 
 cartNav.addEventListener("click", () => {
     displayContent(cartDiv);

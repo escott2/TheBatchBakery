@@ -32,6 +32,10 @@ header .display-4 {
     width: 50%;
 }
 
+.home-donut {
+    transform: translateY(-40px);
+}
+
 nav .lato--bold,
 .lato--bold {
     font-family: 'Lato', sans-serif;

@@ -364,6 +364,8 @@ orderNav.addEventListener("click", () => {
 
 cartNav.addEventListener("click", () => {
     displayContent(cartDiv);
+    generateCartContent(donutObjects, cartContentDiv);
+    generateOrderTotal(donutObjects, cartTotalDiv);
 });
 
 //---Btn to Order Screen

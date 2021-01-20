@@ -455,12 +455,12 @@ deliveryContinueBtn.addEventListener("click", (event) => {
 //---Btn to complete Order
 reviewContinueBtn.addEventListener("click", () => {
     displayContent(orderCompleteDiv);
+    resetOrder();
 })
 
 //---Btn to exit order
 completeExitBtn.addEventListener("click", () => {
     displayContent(homeDiv);
-    resetOrder();
 })
 
 function resetOrder() {
